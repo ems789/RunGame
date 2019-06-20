@@ -42,7 +42,10 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().AddForce(0, levitationSpeed, 0);
         }
         else
-            anim.SetBool("isUp", false);
+            anim.SetBool("isUp", false); // 하강
+
+        if (transform.position.y >= 6)
+            transform.position = new Vector2(transform.position.x, 6f);
 
         if(currentHP <= 0)
         {
