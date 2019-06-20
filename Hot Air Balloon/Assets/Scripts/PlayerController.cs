@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     
     // 레벨
     // 현재 경험치, 필요 경험치
+
     private bool isDead = false;
 
     private void Start()
@@ -26,12 +27,15 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
-    {      
+    {
+        if (isDead)
+            return;
+
         if(Input.GetMouseButton(0))
         {
             anim.SetBool("isUp", true);
             // 일시 정지 상태에서 다시 게임 진행
-            if (Time.timeScale == 0 && isDead == false)
+            if (Time.timeScale == 0 && !isDead)
                 Time.timeScale = 1;
 
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -40,26 +44,31 @@ public class PlayerController : MonoBehaviour
         else
             anim.SetBool("isUp", false);
 
+        if(currentHP <= 0)
+        {
+            isDead = true;
+            anim.SetBool("isDead", true);
+        }
 
-        // 체력이 0이 되면 사망 처리
-        // 게임 매니저의 게임 오버 호출, 재시작 버튼 누르면 재시작
+        // 게임 매니저의 게임 오버 호출
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // 땅에 닿으면 게임을 멈춤
+        // 땅에 닿으면 게임을 일시정지
         if(collision.transform.tag == "Ground")
         {
-            anim.Rebind();
+            if(!isDead)
+                anim.Rebind(); // 열기구 착지한것 처럼 보이도록 Idle 모션으로 애니메이션 리셋
             Time.timeScale = 0;
         }
     }
 
     IEnumerator HPDown()
     {
-        while (currentHP > 0)
+        while (currentHP >= 0)
         {
-            currentHP -= 1;
+            currentHP -= 20;
             yield return new WaitForSeconds(0.5f);
         }        
     }
