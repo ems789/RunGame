@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
                 Time.timeScale = 1;
 
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-            gameObject.GetComponent<Rigidbody>().AddForce(0, speed, 0);
+            gameObject.GetComponent<Rigidbody>().AddForce(0, levitationSpeed, 0);
         }
 
         // 체력이 시간마다 감소            
