@@ -5,11 +5,14 @@ using UnityEngine;
 public class GroundMove : MonoBehaviour
 {
     private float width;
+    private float blank = 0.04f; // 스프라이트 사이의 공백 처리를 위함
 
     void Start()
     {
-        BoxCollider backgroundColider = GetComponent<BoxCollider>();
-        width = backgroundColider.size.x * transform.localScale.x;
+        Renderer backgroundRenderer = GetComponent<Renderer>();
+
+        width = backgroundRenderer.bounds.size.x;
+        Debug.Log(width);
     }
 
     void Update()
@@ -22,8 +25,8 @@ public class GroundMove : MonoBehaviour
 
     void Reposition()
     {
-        // 현재 위치에서 오른쪽으로 가로 길이 *2 만큼 이동
-        Vector2 offset = new Vector2(width * 2f, 0);
+        // 현재 위치에서 (오른쪽으로 가로 길이 - 공백) *2 만큼 이동
+        Vector2 offset = new Vector2((width - blank) * 2f, 0); // 스프라이트를 공백만큼 붙여놓기 위해 공백을 뺀 거리에서 2를 곱한다
         transform.position = (Vector2)transform.position + offset;
     }
 }
