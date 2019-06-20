@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundMove : MonoBehaviour
+public class BackgroundLoop : MonoBehaviour
 {
     private float width;
     private float blank = 0.04f; // 스프라이트 사이의 공백 처리를 위함
