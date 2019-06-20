@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     {
         while (currentHP >= 0)
         {
-            currentHP -= 20;
+            currentHP -= 1;
             yield return new WaitForSeconds(0.5f);
         }        
     }
