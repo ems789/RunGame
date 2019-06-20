@@ -12,7 +12,6 @@ public class GroundMove : MonoBehaviour
         Renderer backgroundRenderer = GetComponent<Renderer>();
 
         width = backgroundRenderer.bounds.size.x;
-        Debug.Log(width);
     }
 
     void Update()
