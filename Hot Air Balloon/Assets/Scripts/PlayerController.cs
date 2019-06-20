@@ -7,15 +7,23 @@ public class PlayerController : MonoBehaviour
 {
     public int hp = 100;
     public int levitationSpeed = 200;
+
+    Animator anim;
     
     // 레벨
     // 현재 경험치, 필요 경험치
     private bool isDead = false;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     void Update()
     {      
         if(Input.GetMouseButton(0))
         {
+            anim.SetBool("isUp", true);
             // 일시 정지 상태에서 다시 게임 진행
             if (Time.timeScale == 0 && isDead == false)
                 Time.timeScale = 1;
@@ -23,6 +31,8 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Rigidbody>().AddForce(0, levitationSpeed, 0);
         }
+        else
+            anim.SetBool("isUp", false);
 
         // 체력이 시간마다 감소            
         // 체력이 0이 되면 사망 처리
@@ -33,7 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         // 땅에 닿으면 게임을 멈춤
         if(collision.transform.tag == "Ground")
-        {            
+        {
+            anim.Rebind();
             Time.timeScale = 0;
         }
     }
