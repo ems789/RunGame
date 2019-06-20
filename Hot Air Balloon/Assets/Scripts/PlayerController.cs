@@ -5,7 +5,9 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
-    public int hp = 100;
+    public int maxHP = 100;
+    public int currentHP;
+
     public int levitationSpeed = 200;
 
     Animator anim;
@@ -17,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        currentHP = maxHP;
+
+        // 체력이 지속적으로 감소
+        StartCoroutine("HPDown");
     }
 
     void Update()
@@ -34,7 +40,7 @@ public class PlayerController : MonoBehaviour
         else
             anim.SetBool("isUp", false);
 
-        // 체력이 시간마다 감소            
+
         // 체력이 0이 되면 사망 처리
         // 게임 매니저의 게임 오버 호출, 재시작 버튼 누르면 재시작
     }
@@ -47,5 +53,14 @@ public class PlayerController : MonoBehaviour
             anim.Rebind();
             Time.timeScale = 0;
         }
+    }
+
+    IEnumerator HPDown()
+    {
+        while (currentHP > 0)
+        {
+            currentHP -= 1;
+            yield return new WaitForSeconds(0.5f);
+        }        
     }
 }
