@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
     
+    
     // 레벨
     // 현재 경험치, 필요 경험치
 
@@ -44,8 +45,8 @@ public class PlayerController : MonoBehaviour
         else
             anim.SetBool("isUp", false); // 하강
 
-        if (transform.position.y >= 6)
-            transform.position = new Vector2(transform.position.x, 6f);
+        if (transform.position.y >= Constant.maxHeight)
+            transform.position = new Vector2(transform.position.x, Constant.maxHeight);
 
         if(currentHP <= 0)
         {
