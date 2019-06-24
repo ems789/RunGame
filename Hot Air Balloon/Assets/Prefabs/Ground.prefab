@@ -56,7 +56,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4994484341448573624}
   - component: {fileID: 4994484341448573630}
-  - component: {fileID: 4994484341448573631}
   - component: {fileID: 80928790}
   m_Layer: 0
   m_Name: Ground 2
@@ -127,19 +126,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &4994484341448573631
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4994484341448573625}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.0699997, y: 1.12, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &80928790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +148,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4994484341594120152}
   - component: {fileID: 4994484341594120153}
-  - component: {fileID: 4994484341594120159}
   - component: {fileID: 208551282}
   m_Layer: 0
   m_Name: Ground 1
@@ -233,19 +218,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &4994484341594120159
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4994484341594120154}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.0699997, y: 1.12, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &208551282
 MonoBehaviour:
   m_ObjectHideFlags: 0
