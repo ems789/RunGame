@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PlayerHpUI : MonoBehaviour
 {
     public Slider hpBar;
-    private PlayerController player;
+    private Player player;
 
     void Start()
     {
-        player = GetComponent<PlayerController>();
+        player = GetComponent<Player>();
     }
 
     void Update()

@@ -5,38 +5,28 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
-    public int maxHP = 100;
-    public int currentHP;
+    Animator anim;
 
     public int levitationSpeed = 200;
-
-    Animator anim;
-    
-    
-    // 레벨
-    // 현재 경험치, 필요 경험치
-
-    private bool isDead = false;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        currentHP = maxHP;
-
-        // 체력이 지속적으로 감소
-        StartCoroutine("HPDown");
     }
 
     void Update()
     {
-        if (isDead)
+        if (Player.instance.isDead)
+        {
+            anim.SetBool("isDead", true);
             return;
+        }
 
         if(Input.GetMouseButton(0))
         {
             anim.SetBool("isUp", true);
             // 일시 정지 상태에서 다시 게임 진행
-            if (Time.timeScale == 0 && !isDead)
+            if (Time.timeScale == 0 && !Player.instance.isDead)
                 Time.timeScale = 1;
 
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -45,16 +35,9 @@ public class PlayerController : MonoBehaviour
         else
             anim.SetBool("isUp", false); // 하강
 
+        // 이동 거리 제한
         if (transform.position.y >= Constant.maxHeight)
             transform.position = new Vector2(transform.position.x, Constant.maxHeight);
-
-        if(currentHP <= 0)
-        {
-            isDead = true;
-            anim.SetBool("isDead", true);
-        }
-
-        // 게임 매니저의 게임 오버 호출
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -62,18 +45,10 @@ public class PlayerController : MonoBehaviour
         // 땅에 닿으면 게임을 일시정지
         if(collision.transform.tag == "Ground")
         {
-            if(!isDead)
+            if(!Player.instance.isDead)
                 anim.Rebind(); // 열기구 착지한것 처럼 보이도록 Idle 모션으로 애니메이션 리셋
             Time.timeScale = 0;
         }
     }
 
-    IEnumerator HPDown()
-    {
-        while (currentHP >= 0)
-        {
-            currentHP -= 1;
-            yield return new WaitForSeconds(0.5f);
-        }        
-    }
 }
