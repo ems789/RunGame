@@ -9,6 +9,12 @@ public class SpawnManager : MonoBehaviour
 
     private float timeChk;
 
+    private void Start()
+    {
+        float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
+        Instantiate(air, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity).transform.SetParent(transform);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +22,7 @@ public class SpawnManager : MonoBehaviour
         while (timeChk >= airCreationInterval)
         {
             float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
-            Instantiate(air, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity);
+            Instantiate(air, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity).transform.SetParent(transform);
             timeChk = 0;
         }
 
