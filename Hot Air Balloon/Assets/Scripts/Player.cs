@@ -35,19 +35,8 @@ public class Player : MonoBehaviour
         StartCoroutine("HPDown");
     }
 
-    IEnumerator HPDown()
-    {
-        while (currentHP >= 0)
-        {
-            currentHP -= 10;
-            if (currentHP <= 0)
-                isDead = true;
-            yield return new WaitForSeconds(0.5f);
-        }
-    }
-
     public void Resurrection()
-    {        
+    {
         if (life > 0 && isDead)
         {
             // 부활 이펙트 추가 필요
@@ -62,6 +51,17 @@ public class Player : MonoBehaviour
         }
         else
             return;
+    }
+
+    IEnumerator HPDown()
+    {
+        while (currentHP >= 0)
+        {
+            currentHP -= 10;
+            if (currentHP <= 0)
+                isDead = true;
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     // 알파값 깜빡임 처리
