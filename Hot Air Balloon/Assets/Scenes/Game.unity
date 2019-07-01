@@ -136,7 +136,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87247222}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 11, y: -2.509083, z: -0.171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1148,43 +1148,8 @@ PrefabInstance:
       objectReference: {fileID: 1151650361}
     - target: {fileID: 5460682554499107504, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
-      propertyPath: SpawnPoint
-      value: 
-      objectReference: {fileID: 1110807330}
-    - target: {fileID: 5460682554499107504, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: life
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5460682554499107504, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
       propertyPath: lifeText
       value: 
       objectReference: {fileID: 1744845811}
-    - target: {fileID: 3175669354261326680, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3175669354261326680, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3175669354261326680, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3175669354261326682, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3175669354261326682, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70209de98fb9b643baedd14be9a1f1d, type: 3}
