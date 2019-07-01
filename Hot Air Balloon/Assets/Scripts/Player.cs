@@ -53,11 +53,20 @@ public class Player : MonoBehaviour
             return;
     }
 
+    // 에어를 먹었을 때 체력 충전
+    public void HPUp(int recovery)
+    {
+        Debug.Log("회복량: " + recovery);
+        currentHP += recovery;
+        if (currentHP > maxHP)
+            currentHP = maxHP;
+    }
+
     IEnumerator HPDown()
     {
         while (currentHP >= 0)
         {
-            currentHP -= 10;
+            currentHP -= 2;
             if (currentHP <= 0)
                 isDead = true;
             yield return new WaitForSeconds(0.5f);
