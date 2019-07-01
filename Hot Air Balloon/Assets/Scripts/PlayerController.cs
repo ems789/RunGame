@@ -16,13 +16,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Player.instance.isDead)
+        // 죽으면 키 입력을 받지 않음
+        if (Player.instance.isDead) 
         {
             anim.SetBool("isDead", true);
             return;
-        }
+        }           
 
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             anim.SetBool("isUp", true);
             // 일시 정지 상태에서 다시 게임 진행
@@ -45,10 +46,18 @@ public class PlayerController : MonoBehaviour
         // 땅에 닿으면 게임을 일시정지
         if(collision.transform.tag == "Ground")
         {
-            if(!Player.instance.isDead)
-                anim.Rebind(); // 열기구 착지한것 처럼 보이도록 Idle 모션으로 애니메이션 리셋
+            if (!Player.instance.isDead)
+            {
+                anim.Rebind(); // 열기구 착지한것 처럼 보이도록 Idle 모션으로 애니메이션 리셋                
+            }
+            else if(Player.instance.isDead) // 죽어서 땅에 떨어지면
+            {
+                Player.instance.Resurrection(); // 부활
+                // 애니메이션 초기화
+                anim.SetBool("isDead", false);
+                anim.Rebind();
+            }
             Time.timeScale = 0;
         }
     }
-
 }

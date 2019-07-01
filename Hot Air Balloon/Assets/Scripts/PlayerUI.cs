@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHpUI : MonoBehaviour
+public class PlayerUI : MonoBehaviour
 {
     public Slider hpBar;
     private Player player;

@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e33c39e57e3b84ab426211cf53ff71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpawnPoint: {fileID: 0}
   maxHP: 100
   currentHP: 0
   life: 1
@@ -162,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 0}
+  lifeCnt: {fileID: 0}
 --- !u!65 &3175669354261326677
 BoxCollider:
   m_ObjectHideFlags: 0

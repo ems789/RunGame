@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public static Player instance = null;
 
+    public Text lifeText;
+
     public int maxHP = 100;
     public int currentHP;
-
     public int life = 1;
 
     public bool isDead = false;
+
+    private SpriteRenderer playerSprite;
+
+    float timechk = 0;
 
     // 레벨
     // 현재 경험치, 필요 경험치
@@ -23,6 +29,8 @@ public class Player : MonoBehaviour
         else
             Destroy(gameObject);
 
+        playerSprite = GetComponent<SpriteRenderer>();
+
         currentHP = maxHP;
 
         // 체력이 지속적으로 감소
@@ -30,15 +38,11 @@ public class Player : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         if (currentHP <= 0)
         {
-            isDead = true;            
+            isDead = true;
         }
-
-        life = GameManager.instance.LifeCheck(life);
-        // 게임 매니저에서 생명이 남아있는지 체크, 생명이 남아있으면 부활, 2초 무적
-        // 생명이 남아있지 않으면 게임오버
     }
 
     IEnumerator HPDown()
@@ -46,7 +50,49 @@ public class Player : MonoBehaviour
         while (currentHP >= 0)
         {
             currentHP -= 20;
+            if (currentHP <= 0)
+                isDead = true;
             yield return new WaitForSeconds(0.5f);
         }
+    }
+
+    public void Resurrection()
+    {        
+        if (life > 0 && isDead)
+        {
+            // 부활 이펙트 추가 필요
+            life--;
+            lifeText.text = "x " + life.ToString();
+
+            StartCoroutine("AlphaBlink");
+            StartCoroutine("HPDown");
+
+            isDead = false;
+            currentHP = maxHP;
+        }
+        else
+            return;
+    }
+
+    // 알파값 깜빡임 처리
+    // 깜빡이는 동안 무적 처리 필요
+    IEnumerator AlphaBlink()
+    {
+        int coolTime = 0;
+
+        while(coolTime < 11)
+        {
+            if (coolTime == 0)
+                playerSprite.color = new Color32(255, 255, 255, 255);
+            else if (coolTime % 2 == 0)
+                playerSprite.color = new Color32(255, 255, 255, 90);
+            else
+                playerSprite.color = new Color32(255, 255, 255, 180);
+
+            yield return new WaitForSeconds(0.2f);
+            coolTime++;
+        }
+
+        playerSprite.color = new Color32(255, 255, 255, 255);
     }
 }
