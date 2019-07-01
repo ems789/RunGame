@@ -37,14 +37,6 @@ public class Player : MonoBehaviour
         StartCoroutine("HPDown");
     }
 
-    void Update()
-    {        
-        if (currentHP <= 0)
-        {
-            isDead = true;
-        }
-    }
-
     IEnumerator HPDown()
     {
         while (currentHP >= 0)
