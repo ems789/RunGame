@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
     {
         while (currentHP >= 0)
         {
-            currentHP -= 20;
+            currentHP -= 10;
             if (currentHP <= 0)
                 isDead = true;
             yield return new WaitForSeconds(0.5f);
@@ -57,10 +57,10 @@ public class Player : MonoBehaviour
             lifeText.text = "x " + life.ToString();
 
             StartCoroutine("AlphaBlink");
-            StartCoroutine("HPDown");
 
             isDead = false;
             currentHP = maxHP;
+            StartCoroutine("HPDown");
         }
         else
             return;
