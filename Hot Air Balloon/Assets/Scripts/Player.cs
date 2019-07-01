@@ -17,8 +17,6 @@ public class Player : MonoBehaviour
 
     private SpriteRenderer playerSprite;
 
-    float timechk = 0;
-
     // 레벨
     // 현재 경험치, 필요 경험치
 
