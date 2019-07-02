@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public int maxHP = 100;
     public int currentHP;
     public int life = 1;
+    public int level = 1;
 
     public bool isDead = false;
 
@@ -53,7 +54,7 @@ public class Player : MonoBehaviour
             return;
     }
 
-    // 에어를 먹었을 때 체력 충전
+    // 에어를 먹었을 때 체력 회복
     public void HPUp(int recovery)
     {
         Debug.Log("회복량: " + recovery);

@@ -6,15 +6,21 @@ using UnityEngine.UI;
 public class PlayerUI : MonoBehaviour
 {
     public Slider hpBar;
-    private Player player;
+    public Text level;
 
-    void Start()
+    private void Start()
     {
-        player = GetComponent<Player>();
+        LevelUpdate();
     }
 
     void Update()
     {
-        hpBar.value = (float)player.currentHP / (float)player.maxHP;
+        hpBar.value = (float)Player.instance.currentHP / (float)Player.instance.maxHP;
+    }
+        
+    // 플레이어의 레벨을 얻어옴
+    public void LevelUpdate()
+    {
+        level.text = Player.instance.level.ToString();
     }
 }
