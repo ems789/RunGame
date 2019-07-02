@@ -63,6 +63,14 @@ public class Player : MonoBehaviour
             currentHP = maxHP;
     }
 
+    public void GetDamage(int damage)
+    {
+        Debug.Log("받은 피해량: " + damage);
+        currentHP -= damage;
+        if (currentHP < 0)
+            currentHP = 0;
+    }
+
     IEnumerator HPDown()
     {
         while (currentHP >= 0)
