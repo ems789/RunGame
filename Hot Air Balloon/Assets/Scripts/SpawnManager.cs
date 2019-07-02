@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject air;
     public float airCreationInterval;
 
-    private float timeChk;
+    private float airTimeChk;
 
     private void Start()
     {
@@ -18,12 +18,12 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeChk += Time.deltaTime;
-        while (timeChk >= airCreationInterval)
+        airTimeChk += Time.deltaTime;
+        while (airTimeChk >= airCreationInterval)
         {
             float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
             Instantiate(air, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity).transform.SetParent(transform);
-            timeChk = 0;
+            airTimeChk = 0;
         }
 
     }
