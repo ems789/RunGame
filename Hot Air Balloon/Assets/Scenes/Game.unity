@@ -158,9 +158,11 @@ MonoBehaviour:
   obj:
   - {fileID: 2024816099392445948, guid: 1cc4e77286345d14fb169b460cec310a, type: 3}
   - {fileID: 2326007619261313208, guid: dfb770341f6f0d64981a5cd3465e8796, type: 3}
+  - {fileID: 362371390054225670, guid: ea05b32c13626a843a11087af1f5d440, type: 3}
   objTimeInterval:
   - 3
   - 4
+  - 0.6
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
