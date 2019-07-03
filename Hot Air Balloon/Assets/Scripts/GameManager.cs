@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
 
     public void GetCoin(int coinScore)
     {
-        coinNum.text = coinScore.ToString();
+        coin += coinScore;
+        coinNum.text = coin.ToString();
     }
 
     private void GameOver()
