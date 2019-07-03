@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
         Screen.SetResolution(800, 480, false);
     }
 
-    public void GetCoin(int coin)
+    public void GetCoin(int coinScore)
     {
-        coinNum.text = coin.ToString();
+        coinNum.text = coinScore.ToString();
     }
 
     private void GameOver()
