@@ -4,27 +4,24 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject air;
-    public float airTimeInterval;
-
-    private float airTimeChk;
+    public GameObject[] obj;
+    public float[] objTimeInterval;
 
     private void Start()
     {
-        float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
-        Instantiate(air, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity).transform.SetParent(transform);
+        for(int i=0; i<obj.Length; i++)
+        {
+            StartCoroutine(SpawnObject(obj[i], objTimeInterval[i]));
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator SpawnObject(GameObject obj, float timeInterval)
     {
-        airTimeChk += Time.deltaTime;
-        while (airTimeChk >= airTimeInterval)
+        while (true)
         {
             float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
-            Instantiate(air, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity).transform.SetParent(transform);
-            airTimeChk = 0;
+            Instantiate(obj, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity).transform.SetParent(transform);
+            yield return new WaitForSeconds(timeInterval);
         }
-
     }
 }

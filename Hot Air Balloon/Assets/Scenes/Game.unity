@@ -155,8 +155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79630a9092b10a4c83fc2ef420890e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  air: {fileID: 2024816099392445948, guid: 1cc4e77286345d14fb169b460cec310a, type: 3}
-  airCreationInterval: 3
+  obj:
+  - {fileID: 2024816099392445948, guid: 1cc4e77286345d14fb169b460cec310a, type: 3}
+  - {fileID: 2326007619261313208, guid: dfb770341f6f0d64981a5cd3465e8796, type: 3}
+  objTimeInterval:
+  - 3
+  - 4
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
