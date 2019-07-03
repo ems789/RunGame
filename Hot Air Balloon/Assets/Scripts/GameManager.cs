@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+
+    public Text coinNum;
+    private int coin;
 
     private void Awake()
     {
@@ -15,6 +19,12 @@ public class GameManager : MonoBehaviour
 
         // 스크린 해상도 고정
         Screen.SetResolution(800, 480, false);
+    }
+
+    public void GetCoin()
+    {
+        coin++;
+        coinNum.text = coin.ToString();
     }
 
     private void GameOver()
