@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public int level = 1;
 
     public bool isDead = false;
+    public bool isUnbeat = false; // 피격x
 
     private SpriteRenderer playerSprite;
 
@@ -84,11 +85,11 @@ public class Player : MonoBehaviour
     }
 
     // 알파값 깜빡임 처리
-    // 깜빡이는 동안 무적 처리 필요
     IEnumerator AlphaBlink()
     {
         int coolTime = 0;
 
+        isUnbeat = true; // 알파값 깜빡이는 동안 무적(충돌체 off)
         while(coolTime < 11)
         {
             if (coolTime == 0)
@@ -101,6 +102,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             coolTime++;
         }
+        isUnbeat = false;
 
         playerSprite.color = new Color32(255, 255, 255, 255);
     }

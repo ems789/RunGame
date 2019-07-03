@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !Player.instance.isUnbeat)
         {
             Player.instance.GetDamage(damage);
         }
