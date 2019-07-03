@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject air;
-    public float airCreationInterval;
+    public float airTimeInterval;
 
     private float airTimeChk;
 
@@ -19,7 +19,7 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         airTimeChk += Time.deltaTime;
-        while (airTimeChk >= airCreationInterval)
+        while (airTimeChk >= airTimeInterval)
         {
             float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
             Instantiate(air, new Vector3(transform.position.x, randomY, 0f), Quaternion.identity).transform.SetParent(transform);
