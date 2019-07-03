@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 362371390054225668}
   - component: {fileID: 362371390054225669}
   - component: {fileID: 128657439523524287}
+  - component: {fileID: 3006891358360435751}
   - component: {fileID: 2239170159500027603}
   m_Layer: 0
   m_Name: Coin
@@ -114,6 +115,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!114 &3006891358360435751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362371390054225670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71cd264d44837fd44807674b2e4c643c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinScore: 1
 --- !u!135 &2239170159500027603
 SphereCollider:
   m_ObjectHideFlags: 0
