@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
     public void GetDamage(int damage)
     {
         Debug.Log("받은 피해량: " + damage);
+        StartCoroutine("AlphaBlink");
         currentHP -= damage;
         if (currentHP < 0)
             currentHP = 0;
