@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Player")
         {
             Player.instance.GetDamage(damage);
-            Destroy(gameObject);
         }
     }
 }
