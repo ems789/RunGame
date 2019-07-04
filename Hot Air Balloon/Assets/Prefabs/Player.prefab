@@ -117,6 +117,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levitationSpeed: 200
+  moveSpeed: 5
+  curDistance: 0
+  tempDistance: 0
+  targetDistance: 200
+  distance: {fileID: 0}
 --- !u!114 &9005676342150938043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +138,9 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 0
   life: 1
+  level: 1
   isDead: 0
+  isUnbeat: 0
 --- !u!114 &9005676342150938042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 0}
+  level: {fileID: 0}
 --- !u!54 &9005676342150938041
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -37,6 +37,12 @@ public class Player : MonoBehaviour
         StartCoroutine("HPDown");
     }
 
+    public void LevelUp()
+    {
+        level++;
+        GetComponent<PlayerUI>().LevelUpdate(); // 현재 레벨을 UI에 반영
+    }
+
     public void Resurrection()
     {
         if (life > 0 && isDead)

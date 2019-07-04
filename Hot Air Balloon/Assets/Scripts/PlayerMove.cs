@@ -10,7 +10,8 @@ public class PlayerMove : MonoBehaviour
     public int moveSpeed = 5; // 초당 이동거리
 
     public float curDistance = 0;
-    public float targetDistance = 200;
+    public float tempDistance = 0; // 거리 중간 저장
+    public float targetDistance = 200; // 목표 이동 거리 = 경험치
 
     public Text distance;
 
@@ -30,8 +31,17 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
+
+        // 거리 체크
         curDistance += moveSpeed * Time.deltaTime;
+        tempDistance = curDistance;
         distance.text = "거리 : " + (int)curDistance; // 소수점은 표시하지 않음
+        if(tempDistance >= targetDistance)
+        {
+            tempDistance = 0;
+            targetDistance *= 2;
+            Player.instance.LevelUp();
+        }
 
         if (Input.GetMouseButton(0))
         {
