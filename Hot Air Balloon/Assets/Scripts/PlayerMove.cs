@@ -1,14 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class PlayerMove : MonoBehaviour
 {
-    Animator anim;
-
     public int levitationSpeed = 200;
+    public int moveSpeed = 5; // 초당 이동거리
 
+    public float curDistance = 0;
+    public float targetDistance = 200;
+
+    public Text distance;
+
+    Animator anim;
+       
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -21,7 +28,10 @@ public class PlayerMove : MonoBehaviour
         {
             anim.SetBool("isDead", true);
             return;
-        }           
+        }
+
+        curDistance += moveSpeed * Time.deltaTime;
+        distance.text = "거리 : " + (int)curDistance; // 소수점은 표시하지 않음
 
         if (Input.GetMouseButton(0))
         {
