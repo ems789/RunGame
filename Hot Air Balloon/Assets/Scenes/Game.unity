@@ -392,6 +392,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &684527233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 684527233, guid: eb433416f1f799c42b8a37aba01e64ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 2039386081194734914}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1110807329
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,8 +882,13 @@ PrefabInstance:
       objectReference: {fileID: 1144471638}
     - target: {fileID: 9005676342150938040, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
-      propertyPath: distance
+      propertyPath: curDistanceText
       value: 
       objectReference: {fileID: 61403690}
+    - target: {fileID: 9005676342150938040, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: targetDistanceText
+      value: 
+      objectReference: {fileID: 684527233}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70209de98fb9b643baedd14be9a1f1d, type: 3}

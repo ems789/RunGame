@@ -121,7 +121,8 @@ MonoBehaviour:
   curDistance: 0
   tempDistance: 0
   targetDistance: 200
-  distance: {fileID: 0}
+  curDistanceText: {fileID: 0}
+  targetDistanceText: {fileID: 0}
 --- !u!114 &9005676342150938043
 MonoBehaviour:
   m_ObjectHideFlags: 0

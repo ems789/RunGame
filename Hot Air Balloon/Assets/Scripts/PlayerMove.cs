@@ -13,13 +13,16 @@ public class PlayerMove : MonoBehaviour
     public float tempDistance = 0; // 거리 중간 저장
     public float targetDistance = 200; // 목표 이동 거리 = 경험치
 
-    public Text distance;
+    public Text curDistanceText;
+    public Text targetDistanceText;
 
     Animator anim;
        
     private void Start()
     {
         anim = GetComponent<Animator>();
+        targetDistanceText.text = "목표거리 : " + (int)targetDistance;
+        
     }
 
     void Update()
@@ -35,11 +38,12 @@ public class PlayerMove : MonoBehaviour
         // 거리 체크
         curDistance += moveSpeed * Time.deltaTime;
         tempDistance = curDistance;
-        distance.text = "거리 : " + (int)curDistance; // 소수점은 표시하지 않음
+        curDistanceText.text = "이동거리 : " + (int)curDistance; // 소수점은 표시하지 않음
         if(tempDistance >= targetDistance)
         {
             tempDistance = 0;
             targetDistance *= 2;
+            targetDistanceText.text = "목표거리 : " + (int)targetDistance;
             Player.instance.LevelUp();
         }
 
