@@ -11,6 +11,7 @@ public class Air : MonoBehaviour
         if(other.tag == "Player")
         {
             Player.instance.HPUp(recovery);
+            gameObject.SetActive(false);
         }
     }
 }
