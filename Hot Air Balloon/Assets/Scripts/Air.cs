@@ -11,7 +11,6 @@ public class Air : MonoBehaviour
         if(other.tag == "Player")
         {
             Player.instance.HPUp(recovery);
-            Destroy(gameObject);
         }
     }
 }
