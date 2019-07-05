@@ -890,5 +890,10 @@ PrefabInstance:
       propertyPath: targetDistanceText
       value: 
       objectReference: {fileID: 684527233}
+    - target: {fileID: 9005676342150938041, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70209de98fb9b643baedd14be9a1f1d, type: 3}

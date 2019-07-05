@@ -16,6 +16,8 @@ public class PlayerMove : MonoBehaviour
     public Text curDistanceText;
     public Text targetDistanceText;
 
+    private bool action = false;
+
     Animator anim;
        
     private void Start()
@@ -54,8 +56,7 @@ public class PlayerMove : MonoBehaviour
             if (Time.timeScale == 0 && !Player.instance.isDead)
                 Time.timeScale = 1;
 
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-            gameObject.GetComponent<Rigidbody>().AddForce(0, levitationSpeed, 0);
+            action = true;
         }
         else
             anim.SetBool("isUp", false); // 하강
@@ -63,6 +64,18 @@ public class PlayerMove : MonoBehaviour
         // 이동 거리 제한
         if (transform.position.y >= Constant.maxHeight)
             transform.position = new Vector2(transform.position.x, Constant.maxHeight);
+
+    }
+
+    // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
+    private void FixedUpdate()
+    {
+       if(action)
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            gameObject.GetComponent<Rigidbody>().AddForce(0, levitationSpeed, 0);
+            action = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
