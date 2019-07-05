@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectMove : MonoBehaviour
 {
     public float speed = 5f;
-    public float afterTimeDisable = 7f; 
+    public float afterTimeDisable = 6f; 
 
     private void Start()
     {
