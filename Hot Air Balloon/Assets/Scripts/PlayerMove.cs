@@ -14,7 +14,6 @@ public class PlayerMove : MonoBehaviour
     public float targetDistance = 200; // 목표 이동 거리 = 경험치
 
     public Text curDistanceText;
-    public Text targetDistanceText;
 
     private bool action = false;
 
@@ -22,9 +21,7 @@ public class PlayerMove : MonoBehaviour
        
     private void Start()
     {
-        anim = GetComponent<Animator>();
-        targetDistanceText.text = "목표거리 : " + (int)targetDistance;
-        
+        anim = GetComponent<Animator>();    
     }
 
     void Update()
@@ -45,7 +42,6 @@ public class PlayerMove : MonoBehaviour
         {
             tempDistance = 0;
             targetDistance *= 2;
-            targetDistanceText.text = "목표거리 : " + (int)targetDistance;
             Player.instance.LevelUp();
         }
 
