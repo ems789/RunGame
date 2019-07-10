@@ -392,18 +392,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &684527233 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 684527233, guid: eb433416f1f799c42b8a37aba01e64ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 2039386081194734914}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1110807329
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,22 +784,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2039386081113630872, guid: eb433416f1f799c42b8a37aba01e64ee,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2039386081113630872, guid: eb433416f1f799c42b8a37aba01e64ee,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2039386081113630873, guid: eb433416f1f799c42b8a37aba01e64ee,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: bb0c67f686b1204428e531b7d9effc3f,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
 --- !u!1001 &9005676342152682226
@@ -905,7 +877,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetDistanceText
       value: 
-      objectReference: {fileID: 684527233}
+      objectReference: {fileID: 0}
     - target: {fileID: 9005676342150938041, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
       propertyPath: m_CollisionDetection
