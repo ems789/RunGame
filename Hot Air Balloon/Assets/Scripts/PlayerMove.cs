@@ -37,7 +37,7 @@ public class PlayerMove : MonoBehaviour
         // 거리 체크
         curDistance += moveSpeed * Time.deltaTime;
         tempDistance = curDistance;
-        curDistanceText.text = "이동거리 : " + (int)curDistance; // 소수점은 표시하지 않음
+        curDistanceText.text = ((int)curDistance).ToString(); // 소수점은 표시하지 않음
         if(tempDistance >= targetDistance)
         {
             tempDistance = 0;
