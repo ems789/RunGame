@@ -16,9 +16,9 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-
-        // 스크린 해상도 고정
-        Screen.SetResolution(800, 480, false);
+        
+        Screen.SetResolution(800, 480, false); // 스크린 해상도 고정
+        Application.targetFrameRate = 60; // 게임 프레임을 60으로 설정
     }
 
     public void GetCoin(int coinScore)
