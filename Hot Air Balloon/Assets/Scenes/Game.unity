@@ -171,12 +171,19 @@ MonoBehaviour:
   - {fileID: 2024816099392445948, guid: 1cc4e77286345d14fb169b460cec310a, type: 3}
   - {fileID: 2326007619261313208, guid: dfb770341f6f0d64981a5cd3465e8796, type: 3}
   - {fileID: 362371390054225670, guid: ea05b32c13626a843a11087af1f5d440, type: 3}
+  alphabet:
   - {fileID: 7180087905100111298, guid: 65ce3b6323a48994ca773947b0d9a26d, type: 3}
+  - {fileID: 4220560504277052935, guid: a46b46f54f6a3b747a87c8144c1011d1, type: 3}
+  - {fileID: 1175508211823378902, guid: 015d78483fe95784f86d09bb4cbfca8c, type: 3}
+  - {fileID: 3420998671518094243, guid: 7d99532b3a2a6ba47b5147eb00fa38ca, type: 3}
+  - {fileID: 4488148376334804379, guid: f40ac3a1b0c3d77489b9b1976923e445, type: 3}
+  - {fileID: 5424547182499237148, guid: 4d909c93c71a71e4f9f7a5d4ba0ab122, type: 3}
+  - {fileID: 1824663196768389797, guid: b526a17f7feadc94f9cb76544a9c1e91, type: 3}
   objTimeInterval:
   - 3
   - 4
   - 0.6
-  - 5
+  alphabetTimeInterval: 5
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
