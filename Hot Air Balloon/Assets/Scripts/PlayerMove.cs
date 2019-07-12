@@ -33,8 +33,7 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-
-        // 거리 체크
+        // 거리 체크 표시
         curDistance += moveSpeed * Time.deltaTime;
         tempDistance = curDistance;
         curDistanceText.text = ((int)curDistance).ToString(); // 소수점은 표시하지 않음
@@ -48,7 +47,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             anim.SetBool("isUp", true);
-            // 일시 정지 상태에서 다시 게임 진행
+            // 착지(일시 정지) 상태에서 다시 게임 진행
             if (Time.timeScale == 0 && !Player.instance.isDead)
                 Time.timeScale = 1;
 
@@ -76,7 +75,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // 땅에 닿으면 게임을 일시정지
+        // 땅에 착지시 게임 일시정지
         if(collision.transform.tag == "Ground")
         {
             if (!Player.instance.isDead)
