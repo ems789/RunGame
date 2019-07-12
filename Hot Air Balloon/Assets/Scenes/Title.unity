@@ -112,6 +112,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &170619065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4964870538556789556, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4964870538895181514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb9aaef0d970754dbc1aa9d78de35fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &752669377 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4964870539435759956, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4964870538895181514}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179322328
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +489,36 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4964870538556789557, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 752669377}
+    - target: {fileID: 4964870538556789559, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964870538556789559, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964870538556789559, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964870538556789559, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964870538556789559, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 170619065}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75bdfc93b7854dc42be02ee5efba5cbd, type: 3}
 --- !u!1001 &6817062550164533217
