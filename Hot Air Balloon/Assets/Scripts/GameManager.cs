@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public Text coinNum;
     private int coin;
 
-    public bool isPause = false;
+    public bool isPause = false; // 키입력을 무시하는 일시정지 상태
 
     private void Awake()
     {
