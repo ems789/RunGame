@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Text coinNum;
     private int coin;
 
+    public bool isPause = false;
+
     private void Awake()
     {
         if (instance == null)
