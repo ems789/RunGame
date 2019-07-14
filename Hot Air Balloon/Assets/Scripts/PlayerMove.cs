@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
 
     public Text curDistanceText;
 
-    private bool isClick = false;
+    private bool isClick = false; // 클릭에 대한 물리 이동 처리를 FixedUpdate에서 고정된 프레임으로 처리하기 위한 플래그 변수   
 
     Animator anim;
        
