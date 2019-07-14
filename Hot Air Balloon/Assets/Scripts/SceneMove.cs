@@ -6,10 +6,16 @@ using UnityEngine.SceneManagement;
 public class SceneMove : MonoBehaviour
 {
     public int sceneNum;
+    public bool hasCheckCondition = true; // 체크 해야할 조건을 가지고 있는지
 
     public void NextScene()
     {
-        if(GetComponent<ConditionCheck>().TextCheck()) // 씬 이동 전에 조건을 만족하는지 검사
+        if (hasCheckCondition) // 체크 해야할 조건이 있으면
+        {
+            if(GetComponent<ConditionCheck>().TextCheck())
+                SceneManager.LoadScene(sceneNum);
+        }
+        else
             SceneManager.LoadScene(sceneNum);
     }
 }
