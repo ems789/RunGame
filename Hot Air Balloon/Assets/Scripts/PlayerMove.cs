@@ -32,6 +32,10 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("isDead", true);
             return;
         }
+        // 키 입력이 불가능한 일시정지 상태
+        if (GameManager.instance.isPause)
+            return;
+
 
         // 거리 체크 표시
         curDistance += moveSpeed * Time.deltaTime;
@@ -46,12 +50,12 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            anim.SetBool("isUp", true);
-            // 착지(일시 정지) 상태에서 다시 게임 진행
-            if (Time.timeScale == 0 && !Player.instance.isDead)
-                Time.timeScale = 1;
+                anim.SetBool("isUp", true);
+                // 착지(일시 정지) 상태에서 다시 게임 진행
+                if (Time.timeScale == 0 && !Player.instance.isDead)
+                    Time.timeScale = 1;
 
-            action = true;
+                action = true;
         }
         else
             anim.SetBool("isUp", false); // 하강
@@ -75,7 +79,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // 땅에 착지시 게임 일시정지
+        // 땅에 착지시 게임 일시정지(키 입력으로 인해 해제 가능한 일시정지 상태)
         if(collision.transform.tag == "Ground")
         {
             if (!Player.instance.isDead)
