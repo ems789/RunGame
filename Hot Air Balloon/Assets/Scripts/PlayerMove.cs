@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
 
     public Text curDistanceText;
 
-    private bool isFloat = false; // 하늘을 날고있는지
+    private bool action = false;
 
     Animator anim;
        
@@ -64,7 +64,7 @@ public class PlayerMove : MonoBehaviour
                 if (Time.timeScale == 0 && !Player.instance.isDead)
                     Time.timeScale = 1;
 
-                isFloat = true;
+                action = true;
             }
         }
         else
@@ -74,11 +74,11 @@ public class PlayerMove : MonoBehaviour
     // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
     private void FixedUpdate()
     {
-       if(isFloat)
+       if(action)
         {
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Rigidbody>().AddForce(0, levitationSpeed, 0);
-            isFloat = false;
+            action = false;
         }
     }
 
