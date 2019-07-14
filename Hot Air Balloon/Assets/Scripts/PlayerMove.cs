@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        // 이동 거리 제한
+        // 이동 높이 제한
         if (transform.position.y >= Constant.maxHeight)
             transform.position = new Vector2(transform.position.x, Constant.maxHeight);
 
