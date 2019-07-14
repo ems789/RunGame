@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
 
     public Text curDistanceText;
 
-    private bool action = false;
+    private bool isClick = false;
 
     Animator anim;
        
@@ -64,7 +64,7 @@ public class PlayerMove : MonoBehaviour
                 if (Time.timeScale == 0 && !Player.instance.isDead)
                     Time.timeScale = 1;
 
-                action = true;
+                isClick = true;
             }
         }
         else
@@ -74,11 +74,11 @@ public class PlayerMove : MonoBehaviour
     // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
     private void FixedUpdate()
     {
-       if(action)
+       if(isClick)
         {
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             gameObject.GetComponent<Rigidbody>().AddForce(0, levitationSpeed, 0);
-            action = false;
+            isClick = false;
         }
     }
 
