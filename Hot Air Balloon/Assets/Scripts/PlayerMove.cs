@@ -16,6 +16,7 @@ public class PlayerMove : MonoBehaviour
     public Text curDistanceText;
 
     private bool isClick = false; // 클릭에 대한 물리 이동 처리를 FixedUpdate에서 고정된 프레임으로 처리하기 위한 플래그 변수   
+    private bool isFloat = false;
 
     Animator anim;
        
@@ -45,14 +46,17 @@ public class PlayerMove : MonoBehaviour
 
 
         // 거리 체크 표시
-        curDistance += moveSpeed * Time.deltaTime;
-        tempDistance = curDistance;
-        curDistanceText.text = ((int)curDistance).ToString(); // 소수점은 표시하지 않음
-        if(tempDistance >= targetDistance)
+        if (isFloat) // 공중에 떠있을 경우에만 거리가 늘어나도록
         {
-            tempDistance = 0;
-            targetDistance *= 2;
-            Player.instance.LevelUp();
+            curDistance += moveSpeed * Time.deltaTime;
+            tempDistance = curDistance;
+            curDistanceText.text = ((int)curDistance).ToString(); // 소수점은 표시하지 않음
+            if (tempDistance >= targetDistance)
+            {
+                tempDistance = 0;
+                targetDistance *= 2;
+                Player.instance.LevelUp();
+            }
         }
 
         if (Input.GetMouseButton(0))
@@ -65,6 +69,7 @@ public class PlayerMove : MonoBehaviour
                     Time.timeScale = 1;
 
                 isClick = true;
+                isFloat = true;
             }
         }
         else
@@ -87,6 +92,7 @@ public class PlayerMove : MonoBehaviour
         // 땅에 착지시 게임 일시정지(키 입력으로 인해 해제 가능한 일시정지 상태)
         if (collision.transform.tag == "Ground")
         {
+            isFloat = false;
             transform.position.Set(transform.position.x, Constant.minHeight, transform.position.z);
             if (!Player.instance.isDead)
             {
