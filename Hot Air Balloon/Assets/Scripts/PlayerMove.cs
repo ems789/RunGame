@@ -26,6 +26,13 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        // 이동 거리 제한
+        if (transform.position.y >= Constant.maxHeight)
+            transform.position = new Vector2(transform.position.x, Constant.maxHeight);
+
+        if (transform.position.y <= Constant.minHeight)
+            transform.position = new Vector2(transform.position.x, Constant.minHeight);
+
         // 죽으면 키 입력을 받지 않음
         if (Player.instance.isDead) 
         {
@@ -62,14 +69,6 @@ public class PlayerMove : MonoBehaviour
         }
         else
             anim.SetBool("isUp", false); // 하강
-
-        // 이동 거리 제한
-        if (transform.position.y >= Constant.maxHeight)
-            transform.position = new Vector2(transform.position.x, Constant.maxHeight);
-
-        if(transform.position.y <= Constant.minHeight)
-            transform.position = new Vector2(transform.position.x, Constant.minHeight);
-
     }
 
     // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
