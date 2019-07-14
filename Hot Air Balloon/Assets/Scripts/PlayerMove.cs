@@ -67,6 +67,9 @@ public class PlayerMove : MonoBehaviour
         if (transform.position.y >= Constant.maxHeight)
             transform.position = new Vector2(transform.position.x, Constant.maxHeight);
 
+        if(transform.position.y <= Constant.minHeight)
+            transform.position = new Vector2(transform.position.x, Constant.minHeight);
+
     }
 
     // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
@@ -83,13 +86,14 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // 땅에 착지시 게임 일시정지(키 입력으로 인해 해제 가능한 일시정지 상태)
-        if(collision.transform.tag == "Ground")
+        if (collision.transform.tag == "Ground")
         {
+            transform.position.Set(transform.position.x, Constant.minHeight, transform.position.z);
             if (!Player.instance.isDead)
             {
                 anim.Rebind(); // 열기구 착지한것 처럼 보이도록 Idle 모션으로 애니메이션 리셋                
             }
-            else if(Player.instance.isDead) // 죽어서 땅에 떨어지면
+            else if (Player.instance.isDead) // 죽어서 땅에 떨어지면
             {
                 Player.instance.Resurrection(); // 부활
                 // 애니메이션 초기화
