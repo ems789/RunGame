@@ -50,12 +50,15 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
+            if (!EventSystem.current.IsPointerOverGameObject()) // 클릭한 대상이 UI가 아닐 경우만 클릭 처리
+            {
                 anim.SetBool("isUp", true);
                 // 착지(일시 정지) 상태에서 다시 게임 진행
                 if (Time.timeScale == 0 && !Player.instance.isDead)
                     Time.timeScale = 1;
 
                 action = true;
+            }
         }
         else
             anim.SetBool("isUp", false); // 하강
