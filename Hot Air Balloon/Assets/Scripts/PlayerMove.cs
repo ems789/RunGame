@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
 
     public Text curDistanceText;
 
+    public ScrollingObject background; // 착지 시 배경을 정지시키기 위해 배경을 받아옴
+
     private bool isClick = false; // 클릭에 대한 물리 이동 처리를 FixedUpdate에서 고정된 프레임으로 처리하기 위한 플래그 변수   
 
     Animator anim;
@@ -59,6 +61,8 @@ public class PlayerMove : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject()) // 클릭한 대상이 UI가 아닐 경우만 클릭 처리
             {
+                background.Restart();
+
                 anim.SetBool("isUp", true);
                 anim.SetBool("isGround", false);                
 
@@ -66,7 +70,9 @@ public class PlayerMove : MonoBehaviour
             }
         }
         else
+        {
             anim.SetBool("isUp", false); // 하강
+        }
     }
 
     // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
@@ -91,6 +97,7 @@ public class PlayerMove : MonoBehaviour
                 anim.SetBool("isDead", false);
             }
             anim.SetBool("isGround", true);
+            background.Stop();
         }
     }
 }
