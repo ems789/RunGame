@@ -15,8 +15,6 @@ public class PlayerMove : MonoBehaviour
 
     public Text curDistanceText;
 
-    public ScrollingObject background; // 착지 시 배경을 정지시키기 위해 배경을 받아옴
-
     private bool isClick = false; // 클릭에 대한 물리 이동 처리를 FixedUpdate에서 고정된 프레임으로 처리하기 위한 플래그 변수   
 
     Animator anim;
@@ -61,8 +59,6 @@ public class PlayerMove : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject()) // 클릭한 대상이 UI가 아닐 경우만 클릭 처리
             {
-                background.Restart();
-
                 anim.SetBool("isUp", true);
                 anim.SetBool("isGround", false);                
 
@@ -89,13 +85,13 @@ public class PlayerMove : MonoBehaviour
         // 땅에 착지시 게임 일시정지(키 입력으로 인해 해제 가능한 일시정지 상태)
         if (collision.transform.tag == "Ground")
         {
+            transform.position.Set(transform.position.x, Constant.minHeight, transform.position.z);
             if (Player.instance.isDead) // 죽어서 땅에 떨어지면
             {
                 Player.instance.Resurrection(); // 부활
                 anim.SetBool("isDead", false);
             }
             anim.SetBool("isGround", true);
-            background.Stop();
         }
     }
 }
