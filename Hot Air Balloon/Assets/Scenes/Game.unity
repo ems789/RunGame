@@ -570,6 +570,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &848224787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1847465220105722771, guid: 2c002b5d1fec1164490a03d9fa77cb67,
+    type: 3}
+  m_PrefabInstance: {fileID: 1847465220815453494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f8e41c5be0273e4494a9b44ec32f197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1110807329
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +778,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1611008315768572748, guid: b6e0fb6e5329d1b45b2588932da67edc,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6e0fb6e5329d1b45b2588932da67edc, type: 3}
 --- !u!1001 &1656827275521670400
@@ -784,6 +801,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656827274054419696, guid: f087788f3d5cc2c43a4d7b7d8bb0f669,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656827275361811390, guid: f087788f3d5cc2c43a4d7b7d8bb0f669,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3635827231719630393, guid: f087788f3d5cc2c43a4d7b7d8bb0f669,
         type: 3}
@@ -889,16 +916,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1656827274054419696, guid: f087788f3d5cc2c43a4d7b7d8bb0f669,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1656827275361811390, guid: f087788f3d5cc2c43a4d7b7d8bb0f669,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f087788f3d5cc2c43a4d7b7d8bb0f669, type: 3}
@@ -1183,7 +1200,7 @@ PrefabInstance:
     - target: {fileID: 9005676342150938044, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.509083
+      value: -2.51
       objectReference: {fileID: 0}
     - target: {fileID: 9005676342150938044, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
@@ -1255,9 +1272,19 @@ PrefabInstance:
       propertyPath: targetDistanceText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 9005676342150938040, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 848224787}
     - target: {fileID: 9005676342150938041, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
       propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005676342150938041, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9005676342150938037, guid: a70209de98fb9b643baedd14be9a1f1d,
