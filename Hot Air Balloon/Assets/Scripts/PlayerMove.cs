@@ -85,7 +85,6 @@ public class PlayerMove : MonoBehaviour
         // 땅에 착지시 게임 일시정지(키 입력으로 인해 해제 가능한 일시정지 상태)
         if (collision.transform.tag == "Ground")
         {
-            transform.position.Set(transform.position.x, Constant.minHeight, transform.position.z);
             if (Player.instance.isDead) // 죽어서 땅에 떨어지면
             {
                 Player.instance.Resurrection(); // 부활
