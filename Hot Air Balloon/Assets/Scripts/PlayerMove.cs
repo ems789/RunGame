@@ -87,10 +87,10 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         // 땅에 착지시 게임 일시정지(키 입력으로 인해 해제 가능한 일시정지 상태)
-        if (collision.transform.tag == "Ground")
+        if (other.transform.tag == "Ground")
         {
             isFloat = false;
             transform.position.Set(transform.position.x, Constant.minHeight, transform.position.z);
