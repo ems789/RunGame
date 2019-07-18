@@ -35,10 +35,16 @@ public class PlayerMove : MonoBehaviour
         if (transform.position.y <= Constant.minHeight)
             transform.position = new Vector2(transform.position.x, Constant.minHeight);
 
-        // 죽으면 키 입력을 받지 않음
+
+
         if (Player.instance.isDead) 
         {
             anim.SetBool("isDead", true);
+            // 이미 지면에 닿아있는 상태에서 죽으면 충돌 검사를 할 수 없기 때문에 따로 검사함
+            if (anim.GetBool("isGround") && Player.instance.life > 0)
+                Player.instance.Resurrection();
+
+            // 죽으면 키 입력을 받지 않음
             return;
         }
 
@@ -73,7 +79,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
         else
-            anim.SetBool("isUp", false); // 하강
+            anim.SetBool("isUp", false); // 하강                
     }
 
     // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
