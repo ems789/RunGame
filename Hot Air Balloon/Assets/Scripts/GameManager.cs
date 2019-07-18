@@ -7,6 +7,14 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public GameObject gameResultBoard;
+    public Text distanceScore;
+    public Text coinScore;
+    public Text totalScore;
+
+    const int scorePerCoin = 100;
+    const int scorePerDistance = 20;
+
     public Text coinNum;
     private int coin;
 
@@ -23,15 +31,21 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60; // 게임 프레임을 60으로 설정
     }
 
-    public void GetCoin(int coinScore)
+    public void GetCoin(int coinValue)
     {
-        coin += coinScore;
+        coin += coinValue;
         coinNum.text = coin.ToString();
     }
 
-    private void GameOver()
+    public IEnumerator GameOver(int distance)
     {
-        // 결과창 띄우기
+        yield return new WaitForSeconds(0.8f);
+
+        // 점수를 계산하고 결과창을 띄움
+        distanceScore.text = (distance * scorePerDistance).ToString();
+        coinScore.text = (coin * scorePerCoin).ToString();
+        totalScore.text = "Total Score : " + ((distance * scorePerDistance) + (coin * scorePerCoin)).ToString();
+        gameResultBoard.SetActive(true);
     }
 
 }

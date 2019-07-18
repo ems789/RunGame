@@ -70,9 +70,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
         else
-        {
             anim.SetBool("isUp", false); // 하강
-        }
     }
 
     // Rigidbody를 다루는 경우 FixedUpdate를 사용해야함(고정된 프레임마다 적용)
@@ -93,7 +91,11 @@ public class PlayerMove : MonoBehaviour
         {
             if (Player.instance.isDead) // 죽어서 땅에 떨어지면
             {
-                Player.instance.Resurrection(); // 부활
+                if(Player.instance.life > 0) // 라이프가 있으면
+                    Player.instance.Resurrection(); // 부활
+                else // 남아있는 라이프가 없으면
+                    GameManager.instance.StartCoroutine(GameManager.instance.GameOver((int)curDistance)); // 게임 결과창 띄움
+
                 anim.SetBool("isDead", false);
             }
             anim.SetBool("isGround", true);
