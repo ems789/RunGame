@@ -32,6 +32,9 @@ public class PlayerMove : MonoBehaviour
         if (transform.position.y >= Constant.maxHeight)
             transform.position = new Vector2(transform.position.x, Constant.maxHeight);
 
+        if (transform.position.y <= Constant.minHeight)
+            transform.position = new Vector2(transform.position.x, Constant.minHeight);
+
         // 죽으면 키 입력을 받지 않음
         if (Player.instance.isDead) 
         {
