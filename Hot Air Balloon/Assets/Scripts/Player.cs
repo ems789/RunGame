@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
 
             isDead = false;
             currentHP = maxHP;
-            StartCoroutine("HPDown");
         }
         else
             return;
