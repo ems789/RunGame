@@ -931,6 +931,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 1847465220105722771, guid: 2c002b5d1fec1164490a03d9fa77cb67,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1847465220105722768, guid: 2c002b5d1fec1164490a03d9fa77cb67,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -985,11 +990,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1847465220105722771, guid: 2c002b5d1fec1164490a03d9fa77cb67,
-        type: 3}
-      propertyPath: speed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c002b5d1fec1164490a03d9fa77cb67, type: 3}
@@ -1120,66 +1120,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2039386080194084725, guid: eb433416f1f799c42b8a37aba01e64ee,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980396, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980396, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980399, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980398, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980398, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980398, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980398, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2832744734104934468}
-    - target: {fileID: 1286980398, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286980398, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2832744734104934468, guid: eb433416f1f799c42b8a37aba01e64ee,
         type: 3}
       propertyPath: pause_Ui
       value: 
       objectReference: {fileID: 444329694854395860}
+    - target: {fileID: 1972157546, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb433416f1f799c42b8a37aba01e64ee, type: 3}
---- !u!114 &2832744734104934468 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2832744734104934468, guid: eb433416f1f799c42b8a37aba01e64ee,
-    type: 3}
-  m_PrefabInstance: {fileID: 2039386081194734914}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14cbcbc60177a1e49a602ff55a1d68dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &9005676342152682226
 PrefabInstance:
   m_ObjectHideFlags: 0
