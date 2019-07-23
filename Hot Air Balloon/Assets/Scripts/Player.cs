@@ -83,10 +83,10 @@ public class Player : MonoBehaviour
     {
         while (currentHP > 0)
         {
+            yield return new WaitForSeconds(0.5f);
             currentHP -= 2;
             if (currentHP <= 0)
                 isDead = true;
-            yield return new WaitForSeconds(0.5f);
         }
     }
 
