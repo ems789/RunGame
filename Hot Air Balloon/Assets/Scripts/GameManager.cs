@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         coinScore.text = (coin * scorePerCoin).ToString();
         totalScore.text = "Total Score : " + ((distance * scorePerDistance) + (coin * scorePerCoin)).ToString();
         gameResultBoard.SetActive(true);
+        Time.timeScale = 0;
     }
 
 }
