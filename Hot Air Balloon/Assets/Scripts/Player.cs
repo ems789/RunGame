@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
 
             isDead = false;
             currentHP = maxHP;
+            StartCoroutine("HPDown");
         }
         else
             return;
@@ -80,7 +81,7 @@ public class Player : MonoBehaviour
 
     IEnumerator HPDown()
     {
-        while (currentHP >= 0)
+        while (currentHP > 0)
         {
             currentHP -= 2;
             if (currentHP <= 0)
