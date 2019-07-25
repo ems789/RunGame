@@ -12,6 +12,7 @@ TagManager:
   - A1
   - N
   - G
+  - Slow
   layers:
   - Default
   - TransparentFX
