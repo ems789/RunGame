@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class PlayerMove : MonoBehaviour
 {
     public int levitationSpeed = 200;
-    public int moveSpeed = 5; // 초당 이동거리
+    public float moveSpeed = 5; // 초당 이동거리
 
     public float curDistance = 0;
     public float tempDistance = 0; // 거리 중간 저장
