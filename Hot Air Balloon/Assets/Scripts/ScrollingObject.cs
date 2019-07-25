@@ -19,6 +19,7 @@ public class ScrollingObject : MonoBehaviour
 
     public void Stop()
     {
+        tempSpeed = speed;
         speed = 0;
     }
 
