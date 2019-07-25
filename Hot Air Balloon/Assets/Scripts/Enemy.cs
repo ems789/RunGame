@@ -6,12 +6,21 @@ public class Enemy : MonoBehaviour
 {
     public int damage = 10;
 
-    // enum으로 타입 구분, 타입별 효과 추가
+    private float slowRate;
+
+    // 태그를 확인하고 특수 효과 추가
+    private void Start()
+    {
+        if (transform.tag == "Slow")
+            slowRate = 0.5f;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && !Player.instance.isUnbeat)
         {
+            if(transform.tag == "Slow") // 특수 효과가 있는 적이면
+                GameManager.instance.StartCoroutine(GameManager.instance.SpeedChange(slowRate, 3f));
             Player.instance.GetDamage(damage);
         }
     }
