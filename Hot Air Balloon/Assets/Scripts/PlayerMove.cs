@@ -70,8 +70,6 @@ public class PlayerMove : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject()) // 클릭한 대상이 UI가 아닐 경우만 클릭 처리
             {
-                background.Restart();
-
                 anim.SetBool("isUp", true);
                 anim.SetBool("isGround", false);                
 
@@ -110,5 +108,10 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("isGround", true);
             background.Stop();
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        background.Restart();
     }
 }
