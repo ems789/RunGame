@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    // 게임의 속도 조절을 위한 두 스크립트
+    public PlayerMove playerMove;
+    public ScrollingObject scrollingObject;
+
     public GameObject gameResultBoard;
     public Text distanceScore;
     public Text coinScore;
@@ -49,6 +53,22 @@ public class GameManager : MonoBehaviour
         totalScore.text = "Total Score : " + ((distance * scorePerDistance) + (coin * scorePerCoin)).ToString();
         gameResultBoard.SetActive(true);
         Time.timeScale = 0;
+    }
+
+    public IEnumerator SpeedChange(float rate, float time)
+    {
+
+        float tempScrollSpeed = scrollingObject.speed;
+        float tempPlayerSpeed = playerMove.moveSpeed;
+
+        scrollingObject.speed -= (scrollingObject.speed * rate);
+        playerMove.moveSpeed -= (playerMove.moveSpeed * rate);
+
+        Debug.Log(scrollingObject.speed + " " + playerMove.moveSpeed);
+        // 시간 경과 후 스피드 원복
+        yield return new WaitForSeconds(time);
+        scrollingObject.speed = tempScrollSpeed;
+        playerMove.moveSpeed = tempPlayerSpeed; 
     }
 
 }
