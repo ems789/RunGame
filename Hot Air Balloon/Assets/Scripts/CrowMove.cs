@@ -41,7 +41,6 @@ public class CrowMove : MonoBehaviour
             Vector3 startRelCenter = startPos.position - center;
             Vector3 endRelCenter = endPos.position - center;
             float fracComplte = (Time.time - startTime) / journeyTime;
-            Debug.Log(fracComplte + " " + Time.time); 
             transform.position = Vector3.Slerp(startRelCenter, endRelCenter, fracComplte);
             transform.position += center;
         }
@@ -52,8 +51,6 @@ public class CrowMove : MonoBehaviour
             startTime = Time.time;
             startPos.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             endPos.position = new Vector3(transform.position.x - distanceToEndParabolic, transform.position.y, transform.position.z);
-            Debug.Log(transform.position);
-            Debug.Log(endPos.position);
             yAxisOfParabolic *= -1; // y축 상하 반전                 
         }
     }
