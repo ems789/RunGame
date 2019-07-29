@@ -30,4 +30,9 @@ public class AlphaBlink : MonoBehaviour
             yield return new WaitForSeconds(0.015f);
         }
     }
+
+    private void OnEnable()
+    {
+        StartCoroutine("Start");
+    }
 }
