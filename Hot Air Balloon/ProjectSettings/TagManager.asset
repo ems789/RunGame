@@ -13,6 +13,7 @@ TagManager:
   - N
   - G
   - Slow
+  - Airplane
   layers:
   - Default
   - TransparentFX
