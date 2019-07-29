@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] obj;
     public GameObject[] alphabet;
+    public GameObject[] coinPattern;
 
     public GameObject attackPath;
 
@@ -13,13 +14,20 @@ public class SpawnManager : MonoBehaviour
 
     public float[] objTimeInterval; // 오브젝트 생성 간격
     public float alphabetTimeInterval; // 알파벳 생성 간격
+    public float coinTimeInterval;
+    public float patternTimeInterval; // 패턴 사이의 간격
 
-    private int maxObj = 20; // 미리 생성해둘 오브젝트 수
-    private int maxAlpha = 3; // 미리 생성해둘 오브젝트(알파벳) 수
+    // 미리 생성해둘 오브젝트 수
+    private const int maxObj = 20; 
+    private const int maxAlpha = 3; 
+    private const int maxCoinPattern = 5;
+
+    private const int patternRepeatCnt = 7; // 패턴 반복 횟수
 
     private ObjectPool[] objPool;
     private ObjectPool[] alphaPool;
-    private ObjectPool airplanePool;
+    private ObjectPool[] coinPool;
+    
 
     private void Awake()
     {
@@ -29,6 +37,7 @@ public class SpawnManager : MonoBehaviour
             path[i].SetActive(false); // 경로를 사용하기 전까지 꺼둠
         }
 
+        // 필요한 만큼 배열에 공간 할당
         objPool = new ObjectPool[obj.Length];
         for (int i = 0; i < obj.Length; i++)
             objPool[i] = new ObjectPool();
@@ -37,11 +46,19 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < alphaPool.Length; i++)
             alphaPool[i] = new ObjectPool();
 
+        coinPool = new ObjectPool[coinPattern.Length];
+        for (int i = 0; i < coinPattern.Length; i++)
+            coinPool[i] = new ObjectPool();
+
+        // 풀 초기화
         for (int i = 0; i < objPool.Length; i++)
             objPool[i].InitPool(obj[i], maxObj);
 
         for (int i = 0; i < alphaPool.Length; i++)
             alphaPool[i].InitPool(alphabet[i], maxAlpha);
+
+        for (int i = 0; i < coinPool.Length; i++)
+            coinPool[i].InitPool(coinPattern[i], maxCoinPattern);
     }
 
     private void Start()
@@ -50,6 +67,8 @@ public class SpawnManager : MonoBehaviour
         {
             StartCoroutine(SpawnObject(objPool[i], objTimeInterval[i]));                        
         }
+        // 코인 생성
+        StartCoroutine(SpawnCoin(coinPool, coinTimeInterval));
 
         // 알파벳 생성 
         StartCoroutine(SpawnAlphabet(alphaPool, alphabetTimeInterval));
@@ -88,6 +107,32 @@ public class SpawnManager : MonoBehaviour
                 pool.GetObject(transform.position.x, randomY);
                 yield return new WaitForSeconds(timeInterval);
             }
+        }
+    }
+
+    // 코인은 패턴을 바꿔가며 생성하므로 생성 함수를 따로 뺌
+    IEnumerator SpawnCoin(ObjectPool[] pool, float timeInterval)
+    {
+        // 패턴 랜덤
+        while (true)
+        {
+            int randPattern = Random.Range(0, coinPattern.Length);
+
+            // 패턴 반복 횟수
+            for (int i = 0; i < patternRepeatCnt; i++)
+            {
+                // 패턴 생성, 패턴당 y랜덤
+                float randY = Random.Range(Constant.minHeight + 2, Constant.maxHeight - 2);
+
+                coinPool[randPattern].GetObject(transform.position.x, randY);
+
+                // 동전 사이의 간격
+                if (i < patternRepeatCnt - 1)
+                    yield return new WaitForSeconds(timeInterval);
+                // 패턴이 끝난 경우 다음 패턴까지의 간격
+                else
+                    yield return new WaitForSeconds(patternTimeInterval);
+            }            
         }
     }
 
