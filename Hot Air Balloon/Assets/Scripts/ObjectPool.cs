@@ -26,7 +26,17 @@ public class ObjectPool : MonoBehaviour
     public void GetObject(float posX, float posY)
     {
         GameObject obj = list.Find(item => item.activeSelf == false);
-        
+
+        // 자식을 가지고 있으면 자식들도 전부 활성화
+        if(obj.transform.childCount > 0)
+        {
+            // 자식 오브젝트도 전부 활성화
+            for (int j = 0; j < obj.transform.childCount; j++)
+            {
+                obj.transform.GetChild(j).gameObject.SetActive(true);
+            }
+        }
+
         if (obj == null)
             return;
 
