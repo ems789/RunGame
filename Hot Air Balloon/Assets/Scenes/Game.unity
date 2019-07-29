@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 87247223}
   - component: {fileID: 87247224}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: Spawn Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,7 +170,6 @@ MonoBehaviour:
   obj:
   - {fileID: 2024816099392445948, guid: 1cc4e77286345d14fb169b460cec310a, type: 3}
   - {fileID: 2326007619261313208, guid: dfb770341f6f0d64981a5cd3465e8796, type: 3}
-  - {fileID: 362371390054225670, guid: ea05b32c13626a843a11087af1f5d440, type: 3}
   - {fileID: 8110645861217214350, guid: 79bd39aebf146fe4bb148d3ec0c43a19, type: 3}
   - {fileID: 7817185398568013483, guid: d3ecec333675a8d4d8b958fb589b4e95, type: 3}
   alphabet:
@@ -181,15 +180,24 @@ MonoBehaviour:
   - {fileID: 4488148376334804379, guid: f40ac3a1b0c3d77489b9b1976923e445, type: 3}
   - {fileID: 5424547182499237148, guid: 4d909c93c71a71e4f9f7a5d4ba0ab122, type: 3}
   - {fileID: 1824663196768389797, guid: b526a17f7feadc94f9cb76544a9c1e91, type: 3}
+  coinPattern:
+  - {fileID: 6201836832076409974, guid: e99bdf9c21894ad46910253eb003c800, type: 3}
+  - {fileID: 1211347761469360395, guid: 9e6440f941fbb584a8398c307f9f61ae, type: 3}
+  - {fileID: 6469268853174306655, guid: 6225c5860eb769843bae84c63b32bcdb, type: 3}
+  - {fileID: 3183283434737896200, guid: a6badb45266efd84c955018effe48468, type: 3}
+  - {fileID: 1239877158350131663, guid: b1d19fe1fad9ce74a9d307bdc1f03fc6, type: 3}
+  - {fileID: 7165470564303785185, guid: 94cff68c39252a24b8e94df3bda4d37a, type: 3}
+  - {fileID: 3061144679691400209, guid: bac358d9f62514545986d9ee016b5f0d, type: 3}
   attackPath: {fileID: 3974034112642416384, guid: 024f9640a9cce9345925c0121a323a6b,
     type: 3}
   objTimeInterval:
   - 3
   - 4
-  - 0.6
   - 5
-  - 10
+  - 15
   alphabetTimeInterval: 5
+  coinTimeInterval: 2
+  patternTimeInterval: 7
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
