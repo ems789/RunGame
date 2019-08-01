@@ -11,7 +11,7 @@ public class CrowMove : MonoBehaviour
     public float journeyTime = 1.0f; // 포물선까지 이동하는데 걸리는 시간
     public float distanceToEndParabolic; // 포물선까지의 거리
 
-    private int yAxisOfParabolic = 1; // 포물선의 y축
+    private int yAxisOfParabolic = 3; // 포물선의 y축
 
     private float startTime;
 

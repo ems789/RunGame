@@ -123,8 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPos: {fileID: 0}
   endPos: {fileID: 0}
-  journeyTime: 0.6
-  distanceToEndParabolic: 2.5
+  journeyTime: 0.8
+  distanceToEndParabolic: 3
 --- !u!114 &696321516
 MonoBehaviour:
   m_ObjectHideFlags: 0
