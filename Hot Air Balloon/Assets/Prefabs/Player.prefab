@@ -118,11 +118,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levitationSpeed: 200
   moveSpeed: 5
+  tempSpeed: 0
   curDistance: 0
   tempDistance: 0
   targetDistance: 200
   curDistanceText: {fileID: 0}
-  targetDistanceText: {fileID: 0}
+  background: {fileID: 0}
 --- !u!114 &9005676342150938043
 MonoBehaviour:
   m_ObjectHideFlags: 0
