@@ -86,7 +86,10 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             currentHP -= 2;
             if (currentHP <= 0)
+            {
+                StopCoroutine("AlphaBlink");
                 isDead = true;
+            }
         }
     }
 
