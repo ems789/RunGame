@@ -13,7 +13,10 @@ public class Alphabet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        alphabetUI.CheckAlphabet(this); // 알파벳을 넘김
-        gameObject.SetActive(false);
+        if (other.tag == "Player")
+        {
+            alphabetUI.CheckAlphabet(this); // 알파벳을 넘김
+            gameObject.SetActive(false);
+        }
     }
 }
