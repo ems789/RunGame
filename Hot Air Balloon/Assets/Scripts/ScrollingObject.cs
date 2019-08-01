@@ -5,7 +5,17 @@ using UnityEngine;
 public class ScrollingObject : MonoBehaviour
 {
     public float speed = 5f;
-    private float tempSpeed = 0;
+    public float tempSpeed = 0;
+    private readonly float backupOfSpeed; // 속도를 원복하는데 사용
+
+    private float slowRate = 0;
+
+    public bool isSlow = false;
+    
+    ScrollingObject()
+    {
+        backupOfSpeed = speed;
+    }
 
     private void Start()
     {
@@ -13,18 +23,27 @@ public class ScrollingObject : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         transform.Translate(Vector3.left * speed * Time.deltaTime);
+        if(isSlow) // 슬로우 효과가 적용되고 있는 동안
+            speed = tempSpeed * slowRate;
     }
 
-    public void Stop()
+    public void SpeedDown(float rate)
     {
-        tempSpeed = speed;
+        isSlow = true;
+        slowRate = rate;
+    }    
+
+    public void Stop()
+    {        
         speed = 0;
+        tempSpeed = speed;
     }
 
     public void Restart()
     {
-        speed = tempSpeed;
+        tempSpeed = backupOfSpeed;
+        speed = backupOfSpeed;
     }
 }

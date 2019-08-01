@@ -19,7 +19,7 @@ public class PlayerMove : MonoBehaviour
 
     public Text curDistanceText;
 
-    public ScrollingObject background; // 착지 시 배경도 같이 정지시키기 위해 배경을 받아옴
+    public ScrollingObject background; // 배경 속도는 캐릭터 속도에 비례함
 
     private bool isClick = false; // 클릭에 대한 물리 이동 처리를 FixedUpdate에서 고정된 프레임으로 처리하기 위한 플래그 변수   
 
@@ -121,6 +121,19 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         background.Restart();
-        Debug.Log("1");
+    }
+
+    public IEnumerator SpeedDown(float rate, float time)
+    {
+        moveSpeed = moveSpeed * rate;
+        background.SpeedDown(rate); // 배경 속도도 낮춘다
+
+        // 일정시간 경과 후 속도 원복
+        yield return new WaitForSeconds(time);
+        moveSpeed = tempSpeed;
+        // 캐릭터가 공중에 떠있을때만 배경의 속도 원복(땅에 있을때는 배경이 움직이지 않음)
+        if (anim.GetBool("isGround") == false)
+            background.Restart();            
+        background.isSlow = false;
     }
 }

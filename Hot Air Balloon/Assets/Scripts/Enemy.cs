@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Player" && !Player.instance.isUnbeat)
         {
             if(transform.tag == "Slow") // 특수 효과가 있는 적이면
-                GameManager.instance.StartCoroutine(GameManager.instance.SpeedChange(slowRate, 3f));
+                PlayerMove.instance.StartCoroutine(PlayerMove.instance.SpeedDown(slowRate, 3f));
             Player.instance.GetDamage(damage);
         }
     }
