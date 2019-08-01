@@ -6,8 +6,12 @@ using UnityEngine.EventSystems;
 
 public class PlayerMove : MonoBehaviour
 {
+    public static PlayerMove instance = null;
+
     public int levitationSpeed = 200;
-    public float moveSpeed = 5; // 초당 이동거리
+    public float moveSpeed = 5; // 속도(초당 이동거리)
+    public float tempSpeed; // 속도 임시 저장(속도 원복 용도)
+    
 
     public float curDistance = 0;
     public float tempDistance = 0; // 거리 중간 저장
@@ -15,7 +19,7 @@ public class PlayerMove : MonoBehaviour
 
     public Text curDistanceText;
 
-    public ScrollingObject background; // 착지 시 배경을 정지시키기 위해 배경을 받아옴
+    public ScrollingObject background; // 착지 시 배경도 같이 정지시키기 위해 배경을 받아옴
 
     private bool isClick = false; // 클릭에 대한 물리 이동 처리를 FixedUpdate에서 고정된 프레임으로 처리하기 위한 플래그 변수   
 
@@ -23,7 +27,13 @@ public class PlayerMove : MonoBehaviour
        
     private void Start()
     {
-        anim = GetComponent<Animator>();    
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+
+        anim = GetComponent<Animator>();
+        tempSpeed = moveSpeed;
     }
 
     void Update()
@@ -34,8 +44,6 @@ public class PlayerMove : MonoBehaviour
 
         if (transform.position.y <= Constant.minHeight)
             transform.position = new Vector2(transform.position.x, Constant.minHeight);
-
-
 
         if (Player.instance.isDead) 
         {
@@ -113,5 +121,6 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         background.Restart();
+        Debug.Log("1");
     }
 }
