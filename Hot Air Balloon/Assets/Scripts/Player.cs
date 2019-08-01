@@ -83,8 +83,8 @@ public class Player : MonoBehaviour
     {
         while (currentHP > 0)
         {
-            yield return new WaitForSeconds(0.5f);
-            currentHP -= 2;
+            yield return new WaitForSeconds(0.1f);
+            currentHP -= 0.4f;
             if (currentHP <= 0)
             {
                 StopCoroutine("AlphaBlink");
