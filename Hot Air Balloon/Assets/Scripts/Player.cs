@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 
     public Text lifeText;
 
-    public int maxHP = 100;
-    public int currentHP;
+    public float maxHP = 100;
+    public float currentHP;
     public int life = 1;
     public int level = 1;
 
