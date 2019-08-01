@@ -54,21 +54,4 @@ public class GameManager : MonoBehaviour
         gameResultBoard.SetActive(true);
         Time.timeScale = 0;
     }
-
-    public IEnumerator SpeedChange(float rate, float time)
-    {
-
-        float tempScrollSpeed = scrollingObject.speed;
-        float tempPlayerSpeed = playerMove.moveSpeed;
-
-        scrollingObject.speed -= (scrollingObject.speed * rate);
-        playerMove.moveSpeed -= (playerMove.moveSpeed * rate);
-
-        Debug.Log(scrollingObject.speed + " " + playerMove.moveSpeed);
-        // 시간 경과 후 스피드 원복
-        yield return new WaitForSeconds(time);
-        scrollingObject.speed = tempScrollSpeed;
-        playerMove.moveSpeed = tempPlayerSpeed; 
-    }
-
 }
