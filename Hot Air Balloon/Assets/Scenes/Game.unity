@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 442783672}
   - component: {fileID: 442783671}
   m_Layer: 0
-  m_Name: Magent
+  m_Name: Magent Field
   m_TagString: Magnet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ SphereCollider:
   m_GameObject: {fileID: 442783669}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
