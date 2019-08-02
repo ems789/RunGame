@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     public float patternTimeInterval; // 패턴 사이의 간격
 
     // 미리 생성해둘 오브젝트 수
-    private const int maxObj = 20; 
+    private const int maxObj = 7; 
     private const int maxAlpha = 3; 
     private const int maxCoinPattern = 5;
 
