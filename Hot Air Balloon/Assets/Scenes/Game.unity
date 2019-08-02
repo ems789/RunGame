@@ -172,6 +172,7 @@ MonoBehaviour:
   - {fileID: 2326007619261313208, guid: dfb770341f6f0d64981a5cd3465e8796, type: 3}
   - {fileID: 8110645861217214350, guid: 79bd39aebf146fe4bb148d3ec0c43a19, type: 3}
   - {fileID: 7817185398568013483, guid: d3ecec333675a8d4d8b958fb589b4e95, type: 3}
+  - {fileID: 1623294241047068355, guid: 395cb693ffaef5c43b5a2ee2d43da4a7, type: 3}
   alphabet:
   - {fileID: 7180087905100111298, guid: 65ce3b6323a48994ca773947b0d9a26d, type: 3}
   - {fileID: 4220560504277052935, guid: a46b46f54f6a3b747a87c8144c1011d1, type: 3}
@@ -195,6 +196,7 @@ MonoBehaviour:
   - 4
   - 5
   - 15
+  - 28
   alphabetTimeInterval: 5
   coinTimeInterval: 2
   patternTimeInterval: 7
