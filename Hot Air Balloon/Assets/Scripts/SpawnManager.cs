@@ -103,9 +103,9 @@ public class SpawnManager : MonoBehaviour
             // 비행기가 아닌 경우(경로 생성 코드x)
             else
             {
-                float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
-                pool.GetObject(transform.position.x, randomY);
                 yield return new WaitForSeconds(timeInterval);
+                float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
+                pool.GetObject(transform.position.x, randomY);                
             }
         }
     }
