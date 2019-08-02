@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5424547182499237121}
   - component: {fileID: 5424547182499237122}
   - component: {fileID: 5424547182499237123}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Alpha_P
   m_TagString: P
   m_Icon: {fileID: 0}
