@@ -378,6 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magneticForce: 1.5
+  magneticDuration: 12
 --- !u!135 &442783672
 SphereCollider:
   m_ObjectHideFlags: 0
