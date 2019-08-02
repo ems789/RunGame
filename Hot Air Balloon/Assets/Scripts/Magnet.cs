@@ -5,6 +5,7 @@ using UnityEngine;
 public class Magnet : MonoBehaviour
 {
     public float magneticForce = 2f;
+    public float magneticDuration = 12f;
 
     private void OnTriggerStay(Collider other)
     {        
@@ -20,7 +21,14 @@ public class Magnet : MonoBehaviour
                 // 빠른 속도로 대상에 붙음
                 other.transform.position = Vector3.Lerp(other.transform.position, transform.position, 10 * Time.deltaTime);
             }
-
         }
+    }
+
+    IEnumerator MagnetFieldActive()
+    {
+        SphereCollider coll = GetComponent<SphereCollider>();
+        coll.enabled = true;
+        yield return new WaitForSeconds(magneticDuration);
+        coll.enabled = false;
     }
 }
