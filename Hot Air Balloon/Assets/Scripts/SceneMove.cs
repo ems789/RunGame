@@ -12,10 +12,14 @@ public class SceneMove : MonoBehaviour
     {
         if (hasCheckCondition) // 체크 해야할 조건이 있으면
         {
-            if(GetComponent<ConditionCheck>().TextCheck())
+            if (GetComponent<ConditionCheck>().TextCheck())
                 SceneManager.LoadScene(sceneNum);
         }
         else
+        {
             SceneManager.LoadScene(sceneNum);
+        }
+        // 씬 이동 전에 걸어둔 일시정지 상태를 해제
+        Time.timeScale = 1;
     }
 }
