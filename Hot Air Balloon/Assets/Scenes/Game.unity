@@ -941,6 +941,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2039386080194084731, guid: eb433416f1f799c42b8a37aba01e64ee,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039386080194084731, guid: eb433416f1f799c42b8a37aba01e64ee,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039386080194084731, guid: eb433416f1f799c42b8a37aba01e64ee,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039386080194084731, guid: eb433416f1f799c42b8a37aba01e64ee,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039386080194084731, guid: eb433416f1f799c42b8a37aba01e64ee,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039386080194084731, guid: eb433416f1f799c42b8a37aba01e64ee,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039386080194084731, guid: eb433416f1f799c42b8a37aba01e64ee,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2039386080964555206, guid: eb433416f1f799c42b8a37aba01e64ee,
         type: 3}
       propertyPath: m_LocalPosition.x

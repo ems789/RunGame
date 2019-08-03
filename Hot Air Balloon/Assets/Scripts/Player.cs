@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
             life--;
             lifeText.text = "x " + life.ToString();
             PlayerMove.instance.anim.SetBool("isDead", false);
+            GetComponent<PlayerUI>().isCoroutineStarted = false; // 부활 시 코루틴도 다시 실행될 수 있도록
 
             StartCoroutine("AlphaBlink");
             isDead = false;
