@@ -181,14 +181,7 @@ MonoBehaviour:
   - {fileID: 4488148376334804379, guid: f40ac3a1b0c3d77489b9b1976923e445, type: 3}
   - {fileID: 5424547182499237148, guid: 4d909c93c71a71e4f9f7a5d4ba0ab122, type: 3}
   - {fileID: 1824663196768389797, guid: b526a17f7feadc94f9cb76544a9c1e91, type: 3}
-  coinPattern:
-  - {fileID: 6201836832076409974, guid: e99bdf9c21894ad46910253eb003c800, type: 3}
-  - {fileID: 1211347761469360395, guid: 9e6440f941fbb584a8398c307f9f61ae, type: 3}
-  - {fileID: 6469268853174306655, guid: 6225c5860eb769843bae84c63b32bcdb, type: 3}
-  - {fileID: 3183283434737896200, guid: a6badb45266efd84c955018effe48468, type: 3}
-  - {fileID: 1239877158350131663, guid: b1d19fe1fad9ce74a9d307bdc1f03fc6, type: 3}
-  - {fileID: 7165470564303785185, guid: 94cff68c39252a24b8e94df3bda4d37a, type: 3}
-  - {fileID: 3061144679691400209, guid: bac358d9f62514545986d9ee016b5f0d, type: 3}
+  coin: {fileID: 362371390054225670, guid: ea05b32c13626a843a11087af1f5d440, type: 3}
   attackPath: {fileID: 3974034112642416384, guid: 024f9640a9cce9345925c0121a323a6b,
     type: 3}
   objTimeInterval:
@@ -200,6 +193,8 @@ MonoBehaviour:
   alphabetTimeInterval: 5
   coinTimeInterval: 2
   patternTimeInterval: 7
+  coinPattern: {fileID: 4216567209354513269, guid: 9b8ce54ff6577804a82f5bdd394e12c0,
+    type: 3}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
