@@ -9,7 +9,8 @@ public class MagnetActive : MonoBehaviour
         if(other.tag == "Player")
         {
             // 플레이어의 자기장을 활성화
-            Player.instance.GetComponentInChildren<Magnet>().StartCoroutine("MagnetFieldActive"); 
+            Player.instance.GetComponentInChildren<Magnet>().StartCoroutine("MagnetFieldActive");
+            gameObject.SetActive(false);
         }
     }
 
