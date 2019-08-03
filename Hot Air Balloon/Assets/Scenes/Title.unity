@@ -638,6 +638,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6817062548767383687, guid: e45b9acab0e47ec46b0cd76b4bb61a22,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6817062548767383691, guid: e45b9acab0e47ec46b0cd76b4bb61a22,
         type: 3}
       propertyPath: nameInput
