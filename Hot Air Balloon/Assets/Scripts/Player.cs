@@ -50,9 +50,9 @@ public class Player : MonoBehaviour
             // 부활 이펙트 추가 필요
             life--;
             lifeText.text = "x " + life.ToString();
+            PlayerMove.instance.anim.SetBool("isDead", false);
 
             StartCoroutine("AlphaBlink");
-
             isDead = false;
             currentHP = maxHP;
             StartCoroutine("HPDown");
