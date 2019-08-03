@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerUI : MonoBehaviour
 {
     public Slider hpBar;
+    public Slider ExpBar;
     public Text level;
 
     private ColorBlock cb; // ColorBlock은 UI의 color를 관리
@@ -22,6 +23,7 @@ public class PlayerUI : MonoBehaviour
     void Update()
     {
         hpBar.value = (float)Player.instance.currentHP / (float)Player.instance.maxHP;
+        ExpBar.value = (float)PlayerMove.instance.curDistance / (float)PlayerMove.instance.targetDistance;
 
         // 체력이 0이 되면 코루틴 중지
         if(hpBar.value == 0)
