@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] obj;
     public GameObject[] alphabet;
-    public GameObject[] coinPattern;
+    public GameObject coin;
 
     public GameObject attackPath;
 
@@ -20,13 +20,15 @@ public class SpawnManager : MonoBehaviour
     // 미리 생성해둘 오브젝트 수
     private const int maxObj = 7; 
     private const int maxAlpha = 3; 
-    private const int maxCoinPattern = 5;
+    private const int maxCoin = 40;
 
     private const int patternRepeatCnt = 7; // 패턴 반복 횟수
 
     private ObjectPool[] objPool;
     private ObjectPool[] alphaPool;
-    private ObjectPool[] coinPool;
+    private ObjectPool coinPool;
+
+    public CoinPattern coinPattern; // 코인 패턴 목록 
     
 
     private void Awake()
@@ -46,19 +48,16 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < alphaPool.Length; i++)
             alphaPool[i] = new ObjectPool();
 
-        coinPool = new ObjectPool[coinPattern.Length];
-        for (int i = 0; i < coinPattern.Length; i++)
-            coinPool[i] = new ObjectPool();
+        coinPool = new ObjectPool();
 
-        // 풀 초기화
+        // 정해진 개수만큼 풀 초기화
         for (int i = 0; i < objPool.Length; i++)
             objPool[i].InitPool(obj[i], maxObj);
 
         for (int i = 0; i < alphaPool.Length; i++)
             alphaPool[i].InitPool(alphabet[i], maxAlpha);
 
-        for (int i = 0; i < coinPool.Length; i++)
-            coinPool[i].InitPool(coinPattern[i], maxCoinPattern);
+        coinPool.InitPool(coin, maxCoin);
     }
 
     private void Start()
@@ -111,20 +110,23 @@ public class SpawnManager : MonoBehaviour
     }
 
     // 코인은 패턴을 바꿔가며 생성하므로 생성 함수를 따로 뺌
-    IEnumerator SpawnCoin(ObjectPool[] pool, float timeInterval)
+    IEnumerator SpawnCoin(ObjectPool pool, float timeInterval)
     {
         // 패턴 랜덤
         while (true)
         {
-            int randPattern = Random.Range(0, coinPattern.Length);
+            Vector3[] vec = coinPattern.GetPattern();            
 
-            // 패턴 반복 횟수
-            for (int i = 0; i < patternRepeatCnt; i++)
+            for(int i=0; i<patternRepeatCnt; i++)
             {
-                // 패턴 생성, 패턴당 y랜덤
                 float randY = Random.Range(Constant.minHeight + 2, Constant.maxHeight - 2);
 
-                coinPool[randPattern].GetObject(transform.position.x, randY);
+                // 뽑은 패턴의 좌표에 따라 동전을 배치함
+                for (int j = 0; j < vec.Length; j++)
+                {
+                    Debug.Log(randY);
+                    coinPool.GetObject(transform.position.x + vec[j].x, vec[j].y + randY);
+                }
 
                 // 동전 사이의 간격
                 if (i < patternRepeatCnt - 1)
@@ -132,7 +134,7 @@ public class SpawnManager : MonoBehaviour
                 // 패턴이 끝난 경우 다음 패턴까지의 간격
                 else
                     yield return new WaitForSeconds(patternTimeInterval);
-            }            
+            }
         }
     }
 
