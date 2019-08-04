@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     // 미리 생성해둘 오브젝트 수
     private const int maxObj = 7; 
     private const int maxAlpha = 3; 
-    private const int maxCoin = 40;
+    private const int maxCoin = 100;
 
     private const int patternRepeatCnt = 7; // 패턴 반복 횟수
 

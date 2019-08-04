@@ -191,7 +191,7 @@ MonoBehaviour:
   - 15
   - 28
   alphabetTimeInterval: 5
-  coinTimeInterval: 2
+  coinTimeInterval: 1.5
   patternTimeInterval: 7
   coinPattern: {fileID: 4216567209354513269, guid: 9b8ce54ff6577804a82f5bdd394e12c0,
     type: 3}
