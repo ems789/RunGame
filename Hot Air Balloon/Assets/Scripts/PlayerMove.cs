@@ -48,9 +48,12 @@ public class PlayerMove : MonoBehaviour
         if (Player.instance.isDead) 
         {
             anim.SetBool("isDead", true);
-            // 이미 지면에 닿아있는 상태에서 죽으면 충돌 검사를 할 수 없기 때문에 따로 검사함
+
+            // 이미 땅과 충돌해 있는 상태로 죽으면 충돌 검사를 할 수 없기 때문에 따로 검사함
             if (anim.GetBool("isGround") && Player.instance.life > 0)
                 Player.instance.Resurrection();
+            else if(anim.GetBool("isGround") && Player.instance.life == 0) // 라이프가 없으면
+                GameManager.instance.StartCoroutine("GameOver"); // 게임 결과창 띄움
 
             // 죽으면 키 입력을 받지 않음
             return;
