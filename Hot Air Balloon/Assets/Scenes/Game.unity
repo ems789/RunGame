@@ -1583,5 +1583,20 @@ PrefabInstance:
       propertyPath: ExpBar
       value: 
       objectReference: {fileID: 421740260}
+    - target: {fileID: 9005676342150938047, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -684469051
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005676342150938047, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005676342150938047, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70209de98fb9b643baedd14be9a1f1d, type: 3}
