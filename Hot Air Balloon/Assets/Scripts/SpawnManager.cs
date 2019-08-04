@@ -88,6 +88,19 @@ public class SpawnManager : MonoBehaviour
                 {
                     path[i].SetActive(true);
                     randomYArr[i] = Random.Range(Constant.minHeight, Constant.maxHeight);
+
+                    if (i == path.Length - 1) // 첫번째 경로와 두번째 경로의 Y축 비교를 위함 (겹치게 생성되는 것을 방지)
+                    {
+                        double curY = randomYArr[i];
+                        double prevY = randomYArr[i - 1];
+                        double diff = (curY > prevY) ? curY - prevY : prevY - curY; // 큰 Y값에서 작은 Y값을 뺌
+                        while (diff < 1) // 위치가 겹치면 Y 좌표를 다시 지정
+                        {
+                            randomYArr[i] = Random.Range(Constant.minHeight, Constant.maxHeight);
+                            curY = randomYArr[i];
+                            diff = (curY > prevY) ? curY - prevY : prevY - curY;
+                        }
+                    }
                     path[i].transform.position = new Vector3(transform.position.x, randomYArr[i], transform.position.z);
                 }
                 yield return new WaitForSeconds(3f);
@@ -124,7 +137,6 @@ public class SpawnManager : MonoBehaviour
                 // 뽑은 패턴의 좌표에 따라 동전을 배치함
                 for (int j = 0; j < vec.Length; j++)
                 {
-                    Debug.Log(randY);
                     coinPool.GetObject(transform.position.x + vec[j].x, vec[j].y + randY);
                 }
 
