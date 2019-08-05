@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
 
     public Animator anim;
        
-    private void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
