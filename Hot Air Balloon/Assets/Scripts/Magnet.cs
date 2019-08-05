@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Magnet : MonoBehaviour
 {
@@ -27,8 +28,11 @@ public class Magnet : MonoBehaviour
     IEnumerator MagnetFieldActive()
     {
         SphereCollider coll = GetComponent<SphereCollider>();
+        PlayerUI magnetUI = GetComponentInParent<PlayerUI>();
+
         coll.enabled = true;
+        magnetUI.StartCoroutine("MagnetOn");       
         yield return new WaitForSeconds(magneticDuration);
-        coll.enabled = false;
+        coll.enabled = false;        
     }
 }
