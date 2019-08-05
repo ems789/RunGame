@@ -12,7 +12,7 @@ public class SceneMove : MonoBehaviour
     {
         if (hasCheckCondition) // 체크 해야할 조건이 있으면
         {
-            if (GetComponent<ConditionCheck>().TextCheck())
+            if (GetComponent<UserNameCheck>().TextCheck())
                 SceneManager.LoadScene(sceneNum);
         }
         else
