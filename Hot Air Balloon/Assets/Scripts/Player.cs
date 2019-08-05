@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     public bool isDead = false;
     public bool isUnbeat = false; // 피격x
+    public bool isInvincibility = false; // 무적
 
     private SpriteRenderer playerSprite;
 

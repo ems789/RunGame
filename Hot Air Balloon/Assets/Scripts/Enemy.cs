@@ -19,6 +19,13 @@ public class Enemy : MonoBehaviour
     {
         if (other.tag == "Player" && !Player.instance.isUnbeat)
         {
+            // 무적인 대상과 부딪히면 몬스터가 죽고 충돌처리를 하지 않음
+            if (Player.instance.isInvincibility)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+
             if(transform.tag == "Slow") // 특수 효과가 있는 적이면
                 PlayerMove.instance.StartCoroutine(PlayerMove.instance.SpeedDown(slowRate, 3f));
             Player.instance.GetDamage(damage);
