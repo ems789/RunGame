@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 38e82bb002d06254aaf17abc479cad46
+guid: 1c517fa07bf54d3499ca55c13213606c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Full Coins_0
-    21300002: Full Coins_1
-    21300004: Full Coins_2
-    21300006: Full Coins_3
-    21300008: Full Coins_4
-    21300010: Full Coins_5
-    21300012: Full Coins_6
-    21300014: Full Coins_7
+    21300000: Coins_0
+    21300002: Coins_1
+    21300004: Coins_2
+    21300006: Coins_3
+    21300008: Coins_4
+    21300010: Coins_5
+    21300012: Coins_6
+    21300014: Coins_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Full Coins_0
+      name: Coins_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,13 +117,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20397d2d437caae49b2708b4e591fa20
+      spriteID: 14b994333c0b52a419583bd54dddb008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Full Coins_1
+      name: Coins_1
       rect:
         serializedVersion: 2
         x: 16
@@ -137,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6bc7e73696c0824f8e7b8b9f9cacc1b
+      spriteID: 9f8beaf53bf1d7745aa116fe3755706d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Full Coins_2
+      name: Coins_2
       rect:
         serializedVersion: 2
         x: 33
@@ -157,13 +157,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2eb5a779a1837e4c8182d6f60d4c742
+      spriteID: 68a363165c9852443b179cd27c2df386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Full Coins_3
+      name: Coins_3
       rect:
         serializedVersion: 2
         x: 50
@@ -177,18 +177,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54fc5c5f8150cbf49b4e865a50ec692c
+      spriteID: 461fe247be7a7d84e9284d0b62446b67
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Full Coins_4
+      name: Coins_4
       rect:
         serializedVersion: 2
-        x: 69
+        x: 68
         y: 0
-        width: 5
+        width: 7
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -197,13 +197,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2f0843c06ee3e3488e33a4bbe79b564
+      spriteID: 6d4a0f9b4b9e47c41aa674e6039b8bfb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Full Coins_5
+      name: Coins_5
       rect:
         serializedVersion: 2
         x: 82
@@ -217,13 +217,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6bc219474c68144b865ef4114b137de
+      spriteID: 48e99b08ff79a0a4597e007d326dc634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Full Coins_6
+      name: Coins_6
       rect:
         serializedVersion: 2
         x: 97
@@ -237,13 +237,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 758b474abd1fec5428bd2eadd6100fe8
+      spriteID: e644945deea0b7e4480210b177688aba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Full Coins_7
+      name: Coins_7
       rect:
         serializedVersion: 2
         x: 112
@@ -257,7 +257,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 020e38f78ed678948bd9882af41ccd98
+      spriteID: de38b986fccd24342a2af1b32fd8c27b
       vertices: []
       indices: 
       edges: []
@@ -265,7 +265,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 58121bdd54042154494bceb8d47d3d68
+    spriteID: 967e1ebde328144458808b343e7b5137
     vertices: []
     indices: 
     edges: []
