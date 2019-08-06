@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
     {
         while (currentHP > 0)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.1f * Time.timeScale); // 배속의 영향을 받지 않음
             currentHP -= 0.4f;
             if (currentHP <= 0)
             {
