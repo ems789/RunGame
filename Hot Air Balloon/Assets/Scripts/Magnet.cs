@@ -8,6 +8,15 @@ public class Magnet : MonoBehaviour
     public float magneticForce = 2f;
     public float magneticDuration = 12f;
 
+    private SphereCollider colli;
+    private PlayerUI magnetUI;
+
+    private void Start()
+    {
+        colli = GetComponent<SphereCollider>();
+        magnetUI = GetComponentInParent<PlayerUI>();
+    }
+
     private void OnTriggerStay(Collider other)
     {        
         if (other.gameObject.layer == LayerMask.NameToLayer("Magnetic"))
@@ -27,12 +36,16 @@ public class Magnet : MonoBehaviour
 
     IEnumerator MagnetFieldActive()
     {
-        SphereCollider coll = GetComponent<SphereCollider>();
-        PlayerUI magnetUI = GetComponentInParent<PlayerUI>();
-
-        coll.enabled = true;
+        colli.enabled = true;
         magnetUI.StartCoroutine("MagnetOn");       
         yield return new WaitForSeconds(magneticDuration);
-        coll.enabled = false;        
+        colli.enabled = false;        
+    }
+
+    public void MagnetFiledDisable()
+    {
+        colli.enabled = false;
+        magnetUI.StopCoroutine("MagnetOn");
+        magnetUI.magnet.enabled = false;
     }
 }

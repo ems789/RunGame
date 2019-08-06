@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
             currentHP -= 0.4f;
             if (currentHP <= 0)
             {
+                GetComponentInChildren<Magnet>().MagnetFiledDisable(); // 자석의 효과를 끔
                 AlphaBlinkStop();               
                 isDead = true;
             }
