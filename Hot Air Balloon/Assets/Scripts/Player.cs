@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
             currentHP -= 0.4f;
             if (currentHP <= 0)
             {
-                StopCoroutine("AlphaBlink");
+                AlphaBlinkStop();               
                 isDead = true;
             }
         }
@@ -116,5 +116,11 @@ public class Player : MonoBehaviour
         isUnbeat = false;
 
         playerSprite.color = new Color32(255, 255, 255, 255);
+    }
+
+    public void AlphaBlinkStop()
+    {
+        playerSprite.color = new Color32(255, 255, 255, 255);
+        StopCoroutine("AlphaBlink");
     }
 }
