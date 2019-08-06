@@ -231,6 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNum: 1
+  hasCheckCondition: 1
+  tutorialView: {fileID: 0}
 --- !u!114 &4964870538556789557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,8 +286,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4964870538556789557}
-        m_MethodName: Check
+      - m_Target: {fileID: 4964870538556789556}
+        m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
