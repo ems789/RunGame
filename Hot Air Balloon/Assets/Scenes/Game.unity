@@ -1520,6 +1520,11 @@ PrefabInstance:
       propertyPath: lifeText
       value: 
       objectReference: {fileID: 1744845811}
+    - target: {fileID: 9005676342150938043, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: isInvincibility
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9005676342150938042, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
       propertyPath: magnet
