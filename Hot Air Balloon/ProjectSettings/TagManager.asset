@@ -15,6 +15,7 @@ TagManager:
   - Slow
   - Airplane
   - Magnet
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -60,4 +61,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3610498245
+    locked: 0
+  - name: Effect
+    uniqueID: 1250246659
     locked: 0
