@@ -15,6 +15,7 @@ public class Alphabet : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            SoundManager.instance.PlayOnce(SoundManager.instance.getItem);
             alphabetUI.CheckAlphabet(this); // 알파벳을 넘김
             gameObject.SetActive(false);
         }

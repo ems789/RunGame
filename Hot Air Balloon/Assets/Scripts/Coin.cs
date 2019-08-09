@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
         if (other.tag == "Player")
         {
             GameManager.instance.GetCoin(coinScore);
+            SoundManager.instance.PlayOnce(SoundManager.instance.getCoin);
             gameObject.SetActive(false);
         }
     }

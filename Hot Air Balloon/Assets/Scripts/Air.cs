@@ -10,6 +10,7 @@ public class Air : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            SoundManager.instance.PlayOnce(SoundManager.instance.getItem);
             Player.instance.HPUp(recovery);
             gameObject.SetActive(false);
         }

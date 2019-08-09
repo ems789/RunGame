@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         level++;
+        SoundManager.instance.PlayOnce(SoundManager.instance.levelUp);
         GetComponent<PlayerUI>().LevelUpdate(); // 현재 레벨을 UI에 반영
     }
 

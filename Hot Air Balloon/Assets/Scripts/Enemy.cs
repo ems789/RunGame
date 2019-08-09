@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
             if(transform.tag == "Slow") // 특수 효과가 있는 적이면
                 PlayerMove.instance.StartCoroutine(PlayerMove.instance.SpeedDown(slowRate, 3f));
             Player.instance.GetDamage(damage);
+            SoundManager.instance.PlayOnce(SoundManager.instance.collision);
         }
     }
 }

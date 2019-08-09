@@ -83,6 +83,7 @@ public class SpawnManager : MonoBehaviour
                 // 비행기는 게임 시작하고 일정 시간 경과후부터 생성됨 
                 yield return new WaitForSeconds(timeInterval);
 
+
                 float[] randomYArr = new float[2];
                 for (int i = 0; i < path.Length; i++)
                 {
@@ -103,9 +104,12 @@ public class SpawnManager : MonoBehaviour
                     }
                     path[i].transform.position = new Vector3(transform.position.x, randomYArr[i], transform.position.z);
                 }
+                SoundManager.instance.StartCoroutine(SoundManager.instance.PlayForNSeconds(SoundManager.instance.airplaneWarning, 3f));
                 yield return new WaitForSeconds(3f);
 
+
                 // 표시해둔 경로를 제거한 뒤 적을 생성
+                SoundManager.instance.PlayOnce(SoundManager.instance.airplaneDeparture);
                 for (int j = 0; j < path.Length; j++)
                 {
                     path[j].SetActive(false);
