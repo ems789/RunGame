@@ -1058,6 +1058,8 @@ MonoBehaviour:
   distanceScore: {fileID: 773093435}
   coinScore: {fileID: 1051356362}
   totalScore: {fileID: 295395700}
+  totalScore2: {fileID: 0}
+  bestScore: {fileID: 0}
   coinNum: {fileID: 1350704277}
   isPause: 0
 --- !u!4 &2046620915
@@ -1091,6 +1093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Best Score UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 507831129049034606, guid: 1092d81671ad4f34fbdf7862f0849a47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 507831129049034602, guid: 1092d81671ad4f34fbdf7862f0849a47,
         type: 3}
