@@ -1760,6 +1760,11 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 848224787}
+    - target: {fileID: 9005676342150938040, guid: a70209de98fb9b643baedd14be9a1f1d,
+        type: 3}
+      propertyPath: targetDistance
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 9005676342150938044, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
       propertyPath: m_LocalPosition.x
