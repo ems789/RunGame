@@ -38,8 +38,9 @@ public class AlphabetUI : MonoBehaviour
         int multiple = 3; // 배속
         Player.instance.isInvincibility = true;
         Time.timeScale = multiple;
-
+        EffectManager.instance.StartCoroutine(EffectManager.instance.PlayForNSeconds(Enum.Particle.booster, transform.position, 10f * multiple));
         yield return new WaitForSeconds(10f * multiple);
+
         AllAlphabetDisable();
         Player.instance.StartCoroutine("AlphaBlink"); // 무적이 끝난 후 짧은 시간 동안 충돌 방지    
         Player.instance.isInvincibility = false;

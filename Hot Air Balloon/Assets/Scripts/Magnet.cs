@@ -35,7 +35,8 @@ public class Magnet : MonoBehaviour
     }
 
     IEnumerator MagnetFieldActive()
-    {
+    {        
+        EffectManager.instance.StartCoroutine(EffectManager.instance.PlayForNSeconds(Enum.Particle.magnet, transform.position, magneticDuration));        
         colli.enabled = true;
         magnetUI.StartCoroutine("MagnetOn");       
         yield return new WaitForSeconds(magneticDuration);

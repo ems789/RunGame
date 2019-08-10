@@ -26,8 +26,16 @@ public class Enemy : MonoBehaviour
                 return;
             }
 
-            if(transform.tag == "Slow") // 특수 효과가 있는 적이면
+            if (transform.tag == "Slow") // 특수 효과가 있는 적이면
+            {
+                // 충돌 이펙트를 충돌 대상들의 중간에 표시하기 위해 Vector3.Lerp를 사용
+                EffectManager.instance.StartCoroutine(EffectManager.instance.PlayParticle(Enum.Particle.cloudCollision, 
+                    Vector3.Lerp(other.transform.position, transform.position, 0.5f)));
                 PlayerMove.instance.StartCoroutine(PlayerMove.instance.SpeedDown(slowRate, 3f));
+            }
+            else // 까마귀의 충돌
+                EffectManager.instance.StartCoroutine(EffectManager.instance.PlayParticle(Enum.Particle.crowCollision,
+                    Vector3.Lerp(other.transform.position, transform.position, 0.5f)));
             Player.instance.GetDamage(damage);
             SoundManager.instance.PlayOnce(SoundManager.instance.collision);
         }

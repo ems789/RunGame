@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     public void LevelUp()
     {
         level++;
+        EffectManager.instance.StartCoroutine(EffectManager.instance.PlayForNSeconds(Enum.Particle.levelUp, transform.position, 5f));
         SoundManager.instance.PlayOnce(SoundManager.instance.levelUp);
         GetComponent<PlayerUI>().LevelUpdate(); // 현재 레벨을 UI에 반영
     }
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         if (life > 0 && isDead)
         {
             // 부활 이펙트 추가 필요
+            EffectManager.instance.StartCoroutine(EffectManager.instance.PlayParticle(Enum.Particle.resurrection, transform.position));
             life--;
             lifeText.text = "x " + life.ToString();
             PlayerMove.instance.anim.SetBool("isDead", false);
@@ -90,6 +92,7 @@ public class Player : MonoBehaviour
             currentHP -= 0.4f;
             if (currentHP <= 0)
             {
+                EffectManager.instance.StartCoroutine(EffectManager.instance.PlayParticle(Enum.Particle.gameDead, transform.position));
                 GetComponentInChildren<Magnet>().MagnetFiledDisable(); // 자석의 효과를 끔
                 AlphaBlinkStop();               
                 isDead = true;
