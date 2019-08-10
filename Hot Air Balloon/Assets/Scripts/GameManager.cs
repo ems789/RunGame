@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Text distanceScore;
     public Text coinScore;
     public Text totalScore;
+    public Text totalScore2;
+    public Text bestScore;
 
     private int highestScore = 0; // 게임이 끝난 뒤 최고기록 표시
 
@@ -63,6 +65,9 @@ public class GameManager : MonoBehaviour
         distanceScore.text = (distance * scorePerDistance).ToString();
         coinScore.text = (coin * scorePerCoin).ToString();
         totalScore.text = ((distance * scorePerDistance) + (coin * scorePerCoin)).ToString();
+        // 베스트 스코어 보드에도 반영
+        totalScore2.text = totalScore.text;
+        bestScore.text = highestScore.ToString();
         gameResultBoard.SetActive(true);
 
         // 최고 기록을 갱신한 경우
