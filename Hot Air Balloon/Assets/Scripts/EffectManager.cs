@@ -70,8 +70,9 @@ public class EffectManager : MonoBehaviour
             particleToPlay.Play();
         }
         yield return new WaitForSeconds(time);
+        particleToPlay.Stop();
         particleToPlay.gameObject.SetActive(false);
-        particleToPlay.Stop();       
+        
     }
 
     // 이펙트가 플레이어를 따라다니도록 함
@@ -80,6 +81,14 @@ public class EffectManager : MonoBehaviour
         // active 상태가 true인 동안 무한 반복
         while(particle.gameObject.activeSelf)
         {
+            // 플레이어가 죽었으면 실행중인 이펙트를 비활성화
+            if(Player.instance.isDead)
+            {
+                particle.Stop();
+                particle.gameObject.SetActive(false);
+                break;
+            }
+
             particle.transform.position = Player.instance.transform.position;
             yield return null;
         }
