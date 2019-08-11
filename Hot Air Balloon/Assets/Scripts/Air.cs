@@ -8,7 +8,7 @@ public class Air : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && !Player.instance.isDead)
         {
             SoundManager.instance.PlayOnce(SoundManager.instance.getItem);
             Player.instance.HPUp(recovery);

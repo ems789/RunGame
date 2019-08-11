@@ -8,7 +8,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !Player.instance.isDead)
         {
             GameManager.instance.GetCoin(coinScore);
             SoundManager.instance.PlayOnce(SoundManager.instance.getCoin);
