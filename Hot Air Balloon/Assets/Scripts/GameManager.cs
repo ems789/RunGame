@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     public IEnumerator GameOver()
     {
         yield return new WaitForSeconds(0.8f);
+        StopAllCoroutines();
 
         // 플레이어가 가지고 있는 PlayerMove 스크립트에서 이동한 거리를 불러옴
         int distance = (int)GameObject.Find("Player").GetComponent<PlayerMove>().curDistance;
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
         data.targetDistance = PlayerMove.instance.targetDistance;        
         DataManager.instance.Save(data);
 
+        Debug.Log("들어옴!");
         Time.timeScale = 0;
     }
 }
