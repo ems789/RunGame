@@ -50,8 +50,6 @@ public class Player : MonoBehaviour
     {
         if (life > 0 && isDead)
         {
-            // 부활 이펙트 추가 필요
-            EffectManager.instance.StartCoroutine(EffectManager.instance.PlayParticle(Enum.Particle.resurrection, transform.position));
             life--;
             lifeText.text = "x " + life.ToString();
             PlayerMove.instance.anim.SetBool("isDead", false);
@@ -59,6 +57,8 @@ public class Player : MonoBehaviour
 
             StartCoroutine("AlphaBlink");
             isDead = false;
+            // 부활 이펙트 표시
+            EffectManager.instance.StartCoroutine(EffectManager.instance.PlayForNSeconds(Enum.Particle.resurrection, transform.position, 1.5f));
             currentHP = maxHP;
             StartCoroutine("HPDown");
         }
