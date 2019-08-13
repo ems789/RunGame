@@ -184,6 +184,13 @@ MonoBehaviour:
   coin: {fileID: 362371390054225670, guid: ea05b32c13626a843a11087af1f5d440, type: 3}
   attackPath: {fileID: 3974034112642416384, guid: 024f9640a9cce9345925c0121a323a6b,
     type: 3}
+  firstSpawnTime:
+  - 0
+  - 7
+  - 25
+  - 40
+  - 25
+  alphabetFirstSpawnTime: 7
   objTimeInterval:
   - 3
   - 4
