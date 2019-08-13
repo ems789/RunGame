@@ -91,8 +91,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.1f * Time.timeScale); // 배속의 영향을 받지 않음
             currentHP -= 0.4f;
             if (currentHP <= 0)
-            {
-                EffectManager.instance.StartCoroutine(EffectManager.instance.PlayParticle(Enum.Particle.gameDead, transform.position));
+            {                
                 GetComponentInChildren<Magnet>().MagnetFiledDisable(); // 자석의 효과를 끔
                 AlphaBlinkStop();               
                 isDead = true;
