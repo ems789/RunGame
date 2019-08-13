@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public Text totalScore;
     public Text totalScore2;
     public Text bestScore;
+    public Text UserName;
 
     private int highestScore = 0; // 게임이 끝난 뒤 최고기록 표시
 
@@ -83,11 +84,17 @@ public class GameManager : MonoBehaviour
             highestScore = int.Parse(totalScore.text);
 
         // 베스트 스코어 보드에도 반영
+        UserName.text = DataManager.instance.userName;
+        // 닉네임 길이에 따른 폰트 사이즈 조절
+        if(UserName.text.Length > 6)
+        {
+            int fontSizeReduction = (UserName.text.Length - 6) * 2; // 한 글자 늘어날 때마다 폰트 2씩 감소
+            UserName.fontSize -= fontSizeReduction;
+
+        }
         totalScore2.text = totalScore.text;
         bestScore.text = highestScore.ToString();
         gameResultBoard.SetActive(true);
-
-
 
         // 데이터 저장
         GameData data = new GameData();
