@@ -16,6 +16,7 @@ TagManager:
   - Airplane
   - Magnet
   - FxTemporaire
+  - PivotIsBelow
   layers:
   - Default
   - TransparentFX
