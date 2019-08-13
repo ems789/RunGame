@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     public List<GameObject> list = new List<GameObject>();
-    private Transform parent;
+    public Transform parent = null;
 
     public void InitPool(GameObject _obj, int poolSize)
     {
@@ -50,6 +50,4 @@ public class ObjectPool : MonoBehaviour
         GameObject obj = list.Find(item => item.activeSelf == false);
         return obj;
     }
-
-
 }
