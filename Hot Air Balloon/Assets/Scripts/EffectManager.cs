@@ -64,9 +64,8 @@ public class EffectManager : MonoBehaviour
             if (particleToPlay.isPlaying)
                 particleToPlay.Stop();
 
-            // 이펙트가 플레이어를 따라다니도록 함
+            // 이펙트가 플레이어의 위치를 따라다니도록 함
             StartCoroutine("FollowingPlayer", particleToPlay);
-            //particleToPlay.transform.position = pos;
             particleToPlay.Play();
         }
         yield return new WaitForSeconds(time);
@@ -75,9 +74,11 @@ public class EffectManager : MonoBehaviour
         
     }
 
-    // 이펙트가 플레이어를 따라다니도록 함
+    // 이펙트가 지정한 위치를 따라다니도록 함
     IEnumerator FollowingPlayer(ParticleSystem particle)
     {
+        Vector3 pos = new Vector3(0, 0, 0);
+
         // active 상태가 true인 동안 무한 반복
         while(particle.gameObject.activeSelf)
         {
@@ -89,7 +90,14 @@ public class EffectManager : MonoBehaviour
                 break;
             }
 
-            particle.transform.position = Player.instance.transform.position;
+            // 피벗이 아래에 있는 이펙트의 경우
+            if (particle.tag == "PivotIsBelow")
+            {
+                pos = Player.instance.transform.GetChild(2).position;
+                particle.transform.position = pos;
+            }
+            else
+                particle.transform.position = Player.instance.transform.position;
             yield return null;
         }
     }
