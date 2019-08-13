@@ -65,7 +65,8 @@ public class GameManager : MonoBehaviour
         else
             yield break;
 
-=
+        
+        EffectManager.instance.StartCoroutine(EffectManager.instance.PlayParticle(Enum.Particle.gameDead, Player.instance.transform.position));
         yield return new WaitForSeconds(1f);
         StopAllCoroutines();
 
