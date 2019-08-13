@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
         StopAllCoroutines();
 
         // 플레이어가 가지고 있는 PlayerMove 스크립트에서 이동한 거리를 불러옴
