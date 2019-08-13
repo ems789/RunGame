@@ -17,6 +17,11 @@ public class ThunderCloud : MonoBehaviour
         StartCoroutine("Shot");
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine("Shot");
+    }
+
     IEnumerator Shot()
     {    
         while (true)
