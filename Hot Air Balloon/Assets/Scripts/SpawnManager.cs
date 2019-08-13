@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] obj;
+    public GameObject[] VariantObj;
     public GameObject[] alphabet;
     public GameObject coin;
 
@@ -27,11 +28,12 @@ public class SpawnManager : MonoBehaviour
     private const int patternRepeatCnt = 7; // 패턴 반복 횟수
 
     private ObjectPool[] objPool;
+    private ObjectPool[] VariantObjPool;
     private ObjectPool[] alphaPool;
     private ObjectPool coinPool;
 
     public CoinPattern coinPattern; // 코인 패턴 목록 
-    
+
 
     private void Awake()
     {
@@ -46,6 +48,12 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < obj.Length; i++)
             objPool[i] = new ObjectPool();
 
+        VariantObjPool = new ObjectPool[VariantObj.Length];
+        for (int i = 0; i < VariantObj.Length; i++)
+        {
+            VariantObjPool[i] = new ObjectPool();
+        }
+
         alphaPool = new ObjectPool[alphabet.Length];
         for (int i = 0; i < alphaPool.Length; i++)
             alphaPool[i] = new ObjectPool();
@@ -56,6 +64,12 @@ public class SpawnManager : MonoBehaviour
         for (int i = 0; i < objPool.Length; i++)
             objPool[i].InitPool(obj[i], maxObj);
 
+        for (int i = 0; i < VariantObjPool.Length; i++)
+        {
+            if (VariantObj[i] != null) // 변종 몬스터를 가진 오브젝트만 풀로 만듬
+                VariantObjPool[i].InitPool(VariantObj[i], maxObj);
+        }
+
         for (int i = 0; i < alphaPool.Length; i++)
             alphaPool[i].InitPool(alphabet[i], maxAlpha);
 
@@ -64,9 +78,10 @@ public class SpawnManager : MonoBehaviour
 
     private void Start()
     {
-        for(int i=0; i<obj.Length; i++)
+        for (int i = 0; i < obj.Length; i++)
         {
-            StartCoroutine(SpawnObject(objPool[i], firstSpawnTime[i], objTimeInterval[i]));                        
+            // 변종 몬스터도 인자로 넣는다(변종 몬스터가 없는 경우 null이 들어감)
+            StartCoroutine(SpawnObject(objPool[i], VariantObjPool[i], firstSpawnTime[i], objTimeInterval[i]));
         }
         // 코인 생성
         StartCoroutine(SpawnCoin(coinPool, coinTimeInterval));
@@ -75,14 +90,14 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnAlphabet(alphaPool, alphabetFirstSpawnTime, alphabetTimeInterval));
     }
 
-    IEnumerator SpawnObject(ObjectPool pool, float _firstSpawnTime, float timeInterval)
+    IEnumerator SpawnObject(ObjectPool pool, ObjectPool variantPool, float _firstSpawnTime, float timeInterval)
     {
         yield return new WaitForSeconds(_firstSpawnTime);
         while (true)
         {
             // 비행기일경우 경로를 미리 띄워주기 위함
             if (pool.PeekObject().tag == "Airplane")
-            {                
+            {
                 float[] randomYArr = new float[2];
                 for (int i = 0; i < path.Length; i++)
                 {
@@ -117,9 +132,14 @@ public class SpawnManager : MonoBehaviour
             }
             // 비행기가 아닌 경우(경로 생성 코드x)
             else
-            {                
+            {
+                int variantRand = Random.Range(0, 8); // 8분의 1 확률
                 float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
-                pool.GetObject(transform.position.x, randomY);
+                if (variantRand == 0 && variantPool.parent != null) // 랜덤 값이 일치하고 변종 몬스터가 존재하면 변종 몬스터 생성
+                    variantPool.GetObject(transform.position.x, randomY);
+                else
+                    pool.GetObject(transform.position.x, randomY);                
+                    
                 yield return new WaitForSeconds(timeInterval);
             }
         }
@@ -131,9 +151,9 @@ public class SpawnManager : MonoBehaviour
         // 패턴 랜덤
         while (true)
         {
-            Vector3[] vec = coinPattern.GetPattern();            
+            Vector3[] vec = coinPattern.GetPattern();
 
-            for(int i=0; i<patternRepeatCnt; i++)
+            for (int i = 0; i < patternRepeatCnt; i++)
             {
                 float randY = Random.Range(Constant.minHeight + 2, Constant.maxHeight - 2);
 
@@ -165,5 +185,5 @@ public class SpawnManager : MonoBehaviour
             pool[rand].GetObject(transform.position.x, randomY);
             yield return new WaitForSeconds(timeInterval);
         }
-    }    
+    }
 }
