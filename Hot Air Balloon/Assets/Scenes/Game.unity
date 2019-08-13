@@ -189,7 +189,7 @@ MonoBehaviour:
   - 4
   - 5
   - 15
-  - 15
+  - 30
   alphabetTimeInterval: 5
   coinTimeInterval: 1.5
   patternTimeInterval: 7
