@@ -11,7 +11,9 @@ public class SpawnManager : MonoBehaviour
     public GameObject attackPath;
 
     private GameObject[] path = new GameObject[2];
-
+    
+    public float[] firstSpawnTime; // 첫 생성시점
+    public float alphabetFirstSpawnTime;
     public float[] objTimeInterval; // 오브젝트 생성 간격
     public float alphabetTimeInterval; // 알파벳 생성 간격
     public float coinTimeInterval;
@@ -64,26 +66,23 @@ public class SpawnManager : MonoBehaviour
     {
         for(int i=0; i<obj.Length; i++)
         {
-            StartCoroutine(SpawnObject(objPool[i], objTimeInterval[i]));                        
+            StartCoroutine(SpawnObject(objPool[i], firstSpawnTime[i], objTimeInterval[i]));                        
         }
         // 코인 생성
         StartCoroutine(SpawnCoin(coinPool, coinTimeInterval));
 
         // 알파벳 생성 
-        StartCoroutine(SpawnAlphabet(alphaPool, alphabetTimeInterval));
+        StartCoroutine(SpawnAlphabet(alphaPool, alphabetFirstSpawnTime, alphabetTimeInterval));
     }
 
-    IEnumerator SpawnObject(ObjectPool pool, float timeInterval)
+    IEnumerator SpawnObject(ObjectPool pool, float _firstSpawnTime, float timeInterval)
     {
+        yield return new WaitForSeconds(_firstSpawnTime);
         while (true)
         {
             // 비행기일경우 경로를 미리 띄워주기 위함
             if (pool.PeekObject().tag == "Airplane")
-            {
-                // 비행기는 게임 시작하고 일정 시간 경과후부터 생성됨 
-                yield return new WaitForSeconds(timeInterval);
-
-
+            {                
                 float[] randomYArr = new float[2];
                 for (int i = 0; i < path.Length; i++)
                 {
@@ -107,7 +106,6 @@ public class SpawnManager : MonoBehaviour
                 SoundManager.instance.StartCoroutine(SoundManager.instance.PlayForNSeconds(SoundManager.instance.airplaneWarning, 3f));
                 yield return new WaitForSeconds(3f);
 
-
                 // 표시해둔 경로를 제거한 뒤 적을 생성
                 SoundManager.instance.PlayOnce(SoundManager.instance.airplaneDeparture);
                 for (int j = 0; j < path.Length; j++)
@@ -115,13 +113,14 @@ public class SpawnManager : MonoBehaviour
                     path[j].SetActive(false);
                     pool.GetObject(transform.position.x, randomYArr[j]);
                 }
+                yield return new WaitForSeconds(timeInterval);
             }
             // 비행기가 아닌 경우(경로 생성 코드x)
             else
-            {
-                yield return new WaitForSeconds(timeInterval);
+            {                
                 float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
-                pool.GetObject(transform.position.x, randomY);                
+                pool.GetObject(transform.position.x, randomY);
+                yield return new WaitForSeconds(timeInterval);
             }
         }
     }
@@ -155,8 +154,9 @@ public class SpawnManager : MonoBehaviour
     }
 
     // 알파벳은 알파벳 목록 중에 하나를 랜덤으로 생성
-    IEnumerator SpawnAlphabet(ObjectPool[] pool, float timeInterval)
+    IEnumerator SpawnAlphabet(ObjectPool[] pool, float _firstSpawnTime, float timeInterval)
     {
+        yield return new WaitForSeconds(_firstSpawnTime);
         while (true)
         {
             int rand = Random.Range(0, alphabet.Length);
