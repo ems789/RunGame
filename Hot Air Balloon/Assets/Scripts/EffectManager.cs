@@ -47,6 +47,7 @@ public class EffectManager : MonoBehaviour
             particleToPlay.Play();
         }
         yield return new WaitForSeconds(1f); // 1초 뒤에 이펙트 상태를 false로 바꿈
+        particleToPlay.Stop();
         particleToPlay.gameObject.SetActive(false);
     }
 
