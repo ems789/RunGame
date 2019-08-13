@@ -24,8 +24,6 @@ public class AlphaBlink : MonoBehaviour
 
             alpha += sign;
             mySprite.color = new Color32(255, 0, 0, (byte)alpha);
-            mySprite.color = new Color32(255, 0, 0, (byte)alpha);
-            mySprite.color = new Color32(255, 0, 0, (byte)alpha);
 
             yield return new WaitForSeconds(0.015f);
         }
