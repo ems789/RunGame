@@ -416,6 +416,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Name Input UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4964870539664962484, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4964870538556789556, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
         type: 3}
       propertyPath: tutorialView
@@ -524,6 +529,17 @@ PrefabInstance:
     - target: {fileID: 4964870539664962376, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4964870539435759956, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 97245b5231722944b80e39c3ac6e991e,
+        type: 3}
+    - target: {fileID: 4964870539435759956, guid: 75bdfc93b7854dc42be02ee5efba5cbd,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
