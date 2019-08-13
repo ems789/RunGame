@@ -2080,11 +2080,6 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 848224787}
-    - target: {fileID: 9005676342150938040, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: targetDistance
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 9005676342150938044, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2145,11 +2140,6 @@ PrefabInstance:
       propertyPath: lifeText
       value: 
       objectReference: {fileID: 1744845811}
-    - target: {fileID: 9005676342150938043, guid: a70209de98fb9b643baedd14be9a1f1d,
-        type: 3}
-      propertyPath: isInvincibility
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9005676342150938042, guid: a70209de98fb9b643baedd14be9a1f1d,
         type: 3}
       propertyPath: magnet
@@ -2170,26 +2160,9 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 1144471638}
-    m_RemovedComponents:
-    - {fileID: 442783671, guid: a70209de98fb9b643baedd14be9a1f1d, type: 3}
+    - target: {fileID: 144193759, guid: a70209de98fb9b643baedd14be9a1f1d, type: 3}
+      propertyPath: m_Name
+      value: PivotBelow
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a70209de98fb9b643baedd14be9a1f1d, type: 3}
---- !u!1 &9005676342152682227 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 442783669, guid: a70209de98fb9b643baedd14be9a1f1d,
-    type: 3}
-  m_PrefabInstance: {fileID: 9005676342152682226}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9005676342152682228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9005676342152682227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf251ef3f686c94a85bb946e5f9a698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magneticForce: 2
-  magneticDuration: 12
