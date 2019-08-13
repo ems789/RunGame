@@ -29,7 +29,8 @@ public class ThunderCloud : MonoBehaviour
             StartCoroutine("alphaBlink");
             yield return new WaitForSeconds(2f);
 
-            ProjectlePool.ProjectilePool[0].GetObject(transform.position.x, transform.position.y);            
+            SoundManager.instance.PlayOnce(SoundManager.instance.Thunder);
+            ProjectlePool.ProjectilePool[0].GetObject(transform.position.x, transform.position.y);                
             yield return new WaitForSeconds(2f);
         }
     }

@@ -677,6 +677,7 @@ MonoBehaviour:
   airplaneWarning: {fileID: 8300000, guid: a6ccfdbc9f630bd4aa6d9e81d88c6d2c, type: 3}
   airplaneDeparture: {fileID: 8300000, guid: a402ee74348d3ed48a5da2f4ed6def20, type: 3}
   levelUp: {fileID: 8300000, guid: e6e9a26e7c009c147b548ad670840cd3, type: 3}
+  Thunder: {fileID: 8300000, guid: 4054980a15b4b8b49a950d261ca5224d, type: 3}
   EFXSource: {fileID: 934042610}
   EFXSourceRepeat: {fileID: 934042611}
 --- !u!4 &934042609

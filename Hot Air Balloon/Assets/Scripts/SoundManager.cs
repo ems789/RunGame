@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip airplaneWarning;
     public AudioClip airplaneDeparture;
     public AudioClip levelUp;
+    public AudioClip Thunder;
 
     // 효과음 처리용 AudioSource
     public AudioSource EFXSource;
