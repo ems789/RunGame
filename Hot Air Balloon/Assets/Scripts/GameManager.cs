@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     private int coin;
 
     public bool isPause = false; // 키입력을 무시하는 일시정지 상태
+    private bool isGameOver = false;
 
     private void Awake()
     {
@@ -56,6 +57,15 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator GameOver()
     {
+        // 게임 오버는 한번만 호출됨
+        if (!isGameOver)
+        {
+            isGameOver = true;
+        }
+        else
+            yield break;
+
+=
         yield return new WaitForSeconds(1f);
         StopAllCoroutines();
 
