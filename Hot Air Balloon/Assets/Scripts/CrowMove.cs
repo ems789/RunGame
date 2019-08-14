@@ -19,16 +19,14 @@ public class CrowMove : MonoBehaviour
     {
         startTime = Time.time;
         startPos = new GameObject("startPos").transform;
-        startPos.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         endPos = new GameObject("endPos").transform;
-        endPos.position = new Vector3(startPos.position.x - distanceToEndParabolic, startPos.position.y, startPos.position.z);
     }
     
     // 다시 활성화 될때마다 시작점과 끝점을 초기화
     private void OnEnable()
     {
         startPos.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        endPos.position = new Vector3(startPos.position.x - distanceToEndParabolic, startPos.position.y, startPos.position.z);
+        endPos.position = new Vector3(startPos.position.x , startPos.position.y, startPos.position.z);
     }
 
     void Update()
