@@ -13,8 +13,6 @@ public class ThunderCloud : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-
-        StartCoroutine("Shot");
     }
 
     private void OnEnable()
