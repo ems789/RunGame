@@ -26,9 +26,22 @@ public class ThunderCloud : MonoBehaviour
         {
             StartCoroutine("alphaBlink");
             yield return new WaitForSeconds(2f);
+            int patternRand = Random.Range(0, 2);
 
             SoundManager.instance.PlayOnce(SoundManager.instance.Thunder);
-            ProjectlePool.ProjectilePool[0].GetObject(transform.position.x, transform.position.y);                
+            if (patternRand == 0)
+            {
+                ProjectlePool.ProjectilePool[0].GetObject(transform.position.x, transform.position.y)
+                    .GetComponent<ThunderMove>().InitDir(Enum.MoveDir.left);
+            }
+            else if(patternRand == 1)
+            {
+                ProjectlePool.ProjectilePool[0].GetObject(transform.position.x, transform.position.y)
+                    .GetComponent<ThunderMove>().InitDir(Enum.MoveDir.up);
+                ProjectlePool.ProjectilePool[0].GetObject(transform.position.x, transform.position.y)
+                  .GetComponent<ThunderMove>().InitDir(Enum.MoveDir.down);
+            }
+            
             yield return new WaitForSeconds(2f);
         }
     }

@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4132927743035575578}
   - component: {fileID: 7075950171780230694}
-  - component: {fileID: 1492590771080390196}
+  - component: {fileID: 2905898567868647631}
+  - component: {fileID: 8774800943645451062}
+  - component: {fileID: 3643967022229056521}
   m_Layer: 0
   m_Name: Thunder
   m_TagString: Untagged
@@ -80,7 +82,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1492590771080390196
+--- !u!114 &2905898567868647631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,8 +91,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 8070704944401661783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaadf1675799c9e459b5127e96433d48, type: 3}
+  m_Script: {fileID: 11500000, guid: c92f1c7c20a5ac94eb8d2e3afbb3edf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 11
   afterTimeDisable: 6
+--- !u!114 &8774800943645451062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070704944401661783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8782e647d1ef0ab44859a539fb9f4c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+--- !u!65 &3643967022229056521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8070704944401661783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.85, y: 0.43, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
