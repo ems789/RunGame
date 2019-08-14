@@ -133,7 +133,7 @@ public class SpawnManager : MonoBehaviour
             // 비행기가 아닌 경우(경로 생성 코드x)
             else
             {
-                int variantRand = Random.Range(0, 8); // 8분의 1 확률
+                int variantRand = Random.Range(0, 7); // 7분의 1 확률
                 float randomY = Random.Range(Constant.minHeight, Constant.maxHeight);
                 if (variantRand == 0 && variantPool.parent != null) // 랜덤 값이 일치하고 변종 몬스터가 존재하면 변종 몬스터 생성
                     variantPool.GetObject(transform.position.x, randomY);
