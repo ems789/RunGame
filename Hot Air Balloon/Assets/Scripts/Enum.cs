@@ -14,4 +14,11 @@ public class Enum
         magnet,
         resurrection,
     }
+
+    public enum MoveDir
+    {
+        up,
+        down,
+        left,
+    }
 }
