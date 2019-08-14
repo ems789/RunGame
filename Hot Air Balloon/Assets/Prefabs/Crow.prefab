@@ -110,7 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  eft: {fileID: 19800000, guid: 0fa2444e461e91740a2535e2caad932d, type: 3}
 --- !u!114 &2018389289119643256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  afterTimeDisable: 6
+  afterTimeDisable: 10
 --- !u!95 &1461192535
 Animator:
   serializedVersion: 3
