@@ -23,7 +23,7 @@ public class ObjectPool : MonoBehaviour
     }
 
     // 대기중인 오브젝트를 꺼내온다
-    public void GetObject(float posX, float posY)
+    public GameObject GetObject(float posX, float posY)
     {
         GameObject obj = list.Find(item => item.activeSelf == false);
 
@@ -38,10 +38,11 @@ public class ObjectPool : MonoBehaviour
         }
 
         if (obj == null)
-            return;
+            return null;
 
         obj.transform.position = new Vector3(posX, posY, 0f);
         obj.SetActive(true);
+        return obj;      
     }
 
     // 대기중인 오브젝트가 있는지 확인만 함
