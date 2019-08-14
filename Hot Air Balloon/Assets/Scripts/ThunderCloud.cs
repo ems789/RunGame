@@ -10,7 +10,7 @@ public class ThunderCloud : MonoBehaviour
     private SpriteRenderer sprite;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
     }
@@ -40,7 +40,6 @@ public class ThunderCloud : MonoBehaviour
         int i = 0;
         while (i < 100)
         {
-            Debug.Log(i);
             if (alpha == 120)
                 sign = 5;
             else if (alpha == 255)
