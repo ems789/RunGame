@@ -51,6 +51,16 @@ public class PlayerUI : MonoBehaviour
                 hpBar.colors = cb;
             }
         }
+        else if (hpBar.value > 0.3) // 체력이 30% 이상인데
+        {
+            if (isCoroutineStarted) // 체력바가 깜빡거리고 있으면 체력바를 원복
+            {
+                isCoroutineStarted = false;
+                StopCoroutine("AlphaBlink");
+                cb.normalColor = new Color32(255, 255, 255, 255); // UI를 원래 색으로 되돌림
+                hpBar.colors = cb;
+            }
+        }
     }
         
     // 플레이어의 레벨을 얻어옴
